@@ -1,161 +1,104 @@
 import pandas as pd
 import re
+import unicodedata
 
 # ==============================
-# LOAD DATA
+# LOAD
 # ==============================
-df = pd.read_csv("AYURVEDA.csv", encoding="utf-8")
-
-# Normalize column names
+df = pd.read_csv("AYURVEDA.csv", dtype=str, keep_default_na=False, encoding="utf-8")
 df.columns = df.columns.str.lower().str.strip()
 
-print("📥 Loaded rows:", len(df))
-
+print("📥 Total rows (original):", len(df))
 
 # ==============================
-# EXTRACT TM2 CODE (STRICT)
+# NORMALIZE TEXT
 # ==============================
-def extract_tm2(namc_code):
-    if pd.isna(namc_code):
+def norm(x):
+    x = "" if x is None else str(x)
+    x = unicodedata.normalize("NFKC", x)
+    x = re.sub(r"\s+", " ", x).strip()
+    return x
+
+for col in df.columns:
+    df[col] = df[col].map(norm)
+
+# Keep a raw copy of original NAMC_CODE for reference
+df["namc_code_raw"] = df["namc_code"]
+
+# ==============================
+# TM2 CODE EXTRACTION
+# Valid TM2 pattern:
+# S + letters/digits, and MUST contain at least one digit
+# Excludes: S, SA, SB, SC ...
+# Examples kept: SR11, SQ00, SP9Y, SK84, S1B
+# ==============================
+tm2_pattern = re.compile(r"S(?=[A-Z0-9]*\d)[A-Z0-9]+")
+
+def extract_tm2(code):
+    code = norm(code)
+
+    if code in {"S", "SA"}:
         return ""
 
-    text = str(namc_code).replace("\xa0", " ").strip()
+    m = tm2_pattern.search(code)
+    return m.group(0) if m else ""
 
-    # Case 1: TM2 at beginning (SR11, SQ00, SP9Y)
-    match = re.match(r"^(S[A-Z][0-9A-Z]+)", text)
-    if match:
-        return match.group(1)
+# ==============================
+# AYUSH CODE EXTRACTION
+# Keep original Ayurvedic code only
+# Remove TM2 part if it is mixed with Ayurveda code
+# ==============================
+def extract_ayush(code):
+    code = norm(code)
 
-    # Case 2: TM2 inside brackets
-    match = re.search(r"\((S[A-Z][0-9A-Z]+)\)", text)
-    if match:
-        return match.group(1)
+    if code in {"S", "SA"}:
+        return code
 
-    return ""
+    # remove TM2 token if present
+    code = tm2_pattern.sub("", code)
 
+    # remove brackets and extra spaces
+    code = re.sub(r"[()]", " ", code)
+    code = re.sub(r"\s+", " ", code).strip()
+
+    return code
 
 df["tm2_code"] = df["namc_code"].apply(extract_tm2)
-
-
-# ==============================
-# CLEAN NAMC CODE (SAFE)
-# ==============================
-def clean_namc(namc_code):
-    if pd.isna(namc_code):
-        return ""
-
-    text = str(namc_code)
-
-    # Fix unicode spacing
-    text = text.replace("\xa0", " ")
-
-    # Remove ONLY TM2 at start (SR11, SQ00)
-    text = re.sub(r"^S[A-Z][0-9A-Z]+\s*", "", text)
-
-    # Remove ONLY TM2 inside brackets
-    text = re.sub(r"\(S[A-Z][0-9A-Z]+\)", "", text)
-
-    # Remove brackets but KEEP content
-    text = re.sub(r"[()]", "", text)
-
-    # Normalize spaces
-    text = re.sub(r"\s+", " ", text).strip()
-
-    return text
-
-
-df["namc_code_clean"] = df["namc_code"].apply(clean_namc)
-
+df["namc_code"] = df["namc_code"].apply(extract_ayush)
 
 # ==============================
-# CLEAN TEXT (PRESERVE SANSKRIT)
+# COUNT BEFORE DEDUP
 # ==============================
-def clean_text(text):
-    if pd.isna(text):
-        return ""
-
-    text = str(text)
-
-    # Only fix spacing — DO NOT lowercase or normalize accents
-    text = text.replace("\xa0", " ")
-    text = re.sub(r"\s+", " ", text).strip()
-
-    return text
-
-
-df["namc_term_diacritical"] = df["namc_term_diacritical"].apply(clean_text)
-df["short_definition"] = df["short_definition"].apply(clean_text)
-df["long_definition"] = df["long_definition"].apply(clean_text)
-
+total_rows_before = len(df)
+tm2_rows_before = (df["tm2_code"] != "").sum()
 
 # ==============================
-# DATASET 1: PURE NAMASTE
+# DUPLICATES
+# Remove only exact duplicate records, but keep one copy.
+# We do NOT collapse different Ayurveda codes that map to same TM2 code.
 # ==============================
-ayu_df = df[[
-    "namc_code_clean",
-    "namc_term_diacritical",
-    "short_definition",
-    "long_definition"
-]].copy()
+dedup_subset = [c for c in df.columns if c not in {"sr no.", "namc_id", "namc_code_raw"}]
 
-ayu_df.rename(columns={
-    "namc_code_clean": "namc_code"
-}, inplace=True)
+duplicates = df[df.duplicated(subset=dedup_subset, keep=False)].copy()
+print("🔁 Duplicate rows found:", len(duplicates))
 
-# Remove completely empty codes
-ayu_df = ayu_df[ayu_df["namc_code"] != ""]
-
-ayu_df.to_csv("ayurveda_only.csv", index=False)
-
-print("\n✅ Pure NAMASTE dataset created")
-print("Rows:", len(ayu_df))
-
+# Keep one copy of duplicates
+df_clean = df.drop_duplicates(subset=dedup_subset, keep="first").copy()
 
 # ==============================
-# DATASET 2: EVALUATION DATASET
+# SAVE FILES
 # ==============================
-tm2_df = df[df["tm2_code"] != ""].copy()
-
-# ICD column (correct one)
-tm2_df["icd_code"] = tm2_df["primary index related"]
-
-# Remove invalid ICD rows
-tm2_df = tm2_df[
-    (tm2_df["icd_code"].notna()) &
-    (tm2_df["icd_code"] != "-") &
-    (tm2_df["icd_code"] != "")
-]
-
-tm2_df = tm2_df[[
-    "namc_code_clean",
-    "tm2_code",
-    "icd_code",
-    "namc_term_diacritical",
-    "short_definition",
-    "long_definition"
-]]
-
-tm2_df.rename(columns={
-    "namc_code_clean": "namc_code"
-}, inplace=True)
-
-tm2_df.to_csv("tm2_eval.csv", index=False)
-
-print("\n✅ Evaluation dataset created")
-print("Rows:", len(tm2_df))
-
+df_clean.to_csv("ayurveda_with_tm2_clean.csv", index=False, encoding="utf-8")
+duplicates.to_csv("duplicate_rows.csv", index=False, encoding="utf-8")
 
 # ==============================
-# VALIDATION CHECKS
+# COUNTS AFTER DEDUP
 # ==============================
-print("\n📊 SUMMARY")
-print("Total rows:", len(df))
-print("NAMASTE dataset:", len(ayu_df))
-print("Evaluation dataset:", len(tm2_df))
+print("\n✅ DONE")
+print("Total rows before:", total_rows_before)
+print("Rows with TM2 before dedup:", tm2_rows_before)
+print("Rows after dedup:", len(df_clean))
+print("Rows with TM2 after dedup:", (df_clean["tm2_code"] != "").sum())
 
-print("\n🔍 SAMPLE CHECK (IMPORTANT)")
-for i in range(10):
-    original = df["namc_code"].iloc[i]
-    cleaned = df["namc_code_clean"].iloc[i]
-    tm2 = df["tm2_code"].iloc[i]
-    print(f"{original}  →  {cleaned}  | TM2: {tm2}")
+print("\n🔍 Sample:")
+print(df_clean[["namc_code", "tm2_code"]].head(10).to_string(index=False))

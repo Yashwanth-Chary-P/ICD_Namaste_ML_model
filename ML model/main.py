@@ -1,157 +1,223 @@
 import pandas as pd
-import re
-import unicodedata
+import numpy as np
+import torch
+import time
+from tqdm import tqdm
+from collections import defaultdict
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from sentence_transformers import SentenceTransformer, util
 
 # ==============================
-# FILE PATHS
+# LOAD
 # ==============================
-AYURVEDA_FILE = "ayurveda_final.csv"
-ICD_FILE = "tm2_final.csv"
+start = time.time()
+
+ayu = pd.read_csv("AYURVEDA_clean.csv")
+tm2 = pd.read_csv("tm2_final.csv")
+eval_df = pd.read_csv("tm2_eval.csv")
+
+print("📥 Loaded:")
+print("Ayurveda:", len(ayu))
+print("TM2:", len(tm2))
+print("Eval:", len(eval_df))
 
 # ==============================
-# LOAD DATA
+# CLEAN
 # ==============================
-ayu = pd.read_csv(AYURVEDA_FILE, encoding="utf-8")
-icd = pd.read_csv(ICD_FILE, encoding="utf-8")
+for df in [ayu, tm2, eval_df]:
+    df.columns = df.columns.str.strip()
 
-# Normalize column names
-ayu.columns = ayu.columns.str.lower().str.strip()
-icd.columns = icd.columns.str.lower().str.strip()
+ayu = ayu.drop_duplicates(subset=["namc_code"])
+tm2 = tm2.drop_duplicates(subset=["code"])
+eval_df = eval_df.drop_duplicates(subset=["namc_code"])
 
-print("📥 Ayurveda rows:", len(ayu))
-print("📥 ICD rows:", len(icd))
+for col in ["query", "label", "namc_term_diacritical"]:
+    ayu[col] = ayu.get(col, "").fillna("").astype(str)
 
-# ==============================
-# SAFE TEXT
-# ==============================
-def safe(x):
-    if pd.isna(x):
-        return ""
-    return str(x).strip()
+for col in ["title", "fsn", "definition", "icd_index_terms"]:
+    if col in tm2.columns:
+        tm2[col] = tm2[col].fillna("").astype(str)
+    else:
+        tm2[col] = ""
 
-# ==============================
-# CLEAN TEXT
-# ==============================
-def clean_text(text):
-    text = safe(text)
-    text = unicodedata.normalize("NFKC", text)
-    text = text.lower()
-    text = re.sub(r"[-/]", " ", text)
-    text = re.sub(r"\s+", " ", text).strip()
-    return text
+# remove empty queries
+ayu = ayu[ayu["query"].str.strip() != ""].reset_index(drop=True)
+
+print("✅ After cleaning:", len(ayu))
 
 # ==============================
-# BUILD QUERY (ROBUST)
+# BUILD QUERY
 # ==============================
-def build_query(row):
-    sanskrit = safe(row.get("namc_term_diacritical", ""))
-    short_def = safe(row.get("short_definition", ""))
-    long_def = safe(row.get("long_definition", ""))
+ayu["final_query"] = (
+    ayu["namc_term_diacritical"] + " " +
+    ayu["query"] + " " +
+    ayu["label"]
+)
 
-    return clean_text(
-        (sanskrit + " ") * 2 +
-        long_def + " " +
-        short_def
-    )
-
-ayu["query"] = ayu.apply(build_query, axis=1)
+# NO index_terms used
+tm2["final_text"] = (
+    tm2["title"] + " " +
+    tm2["fsn"] + " " +
+    tm2["definition"] + " " +
+    tm2["icd_index_terms"]
+)
 
 # ==============================
-# PREPARE ICD TEXT
+# DICTIONARY (FROM EVAL)
 # ==============================
-if "index_terms" in icd.columns:
-    icd["text"] = icd["index_terms"].fillna("")
-else:
-    icd["text"] = (
-        icd.get("title", "").astype(str) + " " +
-        icd.get("definition", "").astype(str)
-    )
+sanskrit_to_tm2 = defaultdict(set)
 
-icd["text"] = icd["text"].apply(clean_text)
+dict_df = pd.merge(
+    eval_df,
+    ayu[["namc_code", "namc_term_diacritical"]],
+    on="namc_code",
+    how="inner"
+)
+
+sanskrit_col = [c for c in dict_df.columns if "namc_term_diacritical" in c][0]
+
+for _, r in dict_df.iterrows():
+    s = str(r[sanskrit_col]).strip()
+    if s:
+        sanskrit_to_tm2[s].add(r["tm2_code"])
+
+print("📚 Dictionary size:", len(sanskrit_to_tm2))
 
 # ==============================
 # TF-IDF
 # ==============================
-vectorizer = TfidfVectorizer(max_features=5000)
+tfidf = TfidfVectorizer(max_features=30000)
 
-# Fit on combined corpus
-all_text = list(ayu["query"]) + list(icd["text"])
-vectorizer.fit(all_text)
+tfidf_tm2 = tfidf.fit_transform(tm2["final_text"])
+tfidf_ayu = tfidf.transform(ayu["final_query"])
 
-# Transform
-ayu_vec = vectorizer.transform(ayu["query"])
-icd_vec = vectorizer.transform(icd["text"])
-
-print("✅ TF-IDF built")
+tfidf_sim = cosine_similarity(tfidf_ayu, tfidf_tm2)
 
 # ==============================
-# SIMILARITY
+# BERT
 # ==============================
-sim_matrix = cosine_similarity(ayu_vec, icd_vec)
+print("🧠 Loading BERT...")
+model = SentenceTransformer("all-MiniLM-L6-v2")
 
-# ==============================
-# TOP-K PREDICTION
-# ==============================
-def get_top_k(sim_row, k=3):
-    return sim_row.argsort()[-k:][::-1]
+ayu_emb = model.encode(
+    ayu["final_query"].tolist(),
+    convert_to_tensor=True,
+    show_progress_bar=True
+)
 
-top1 = []
-top3 = []
-
-for i in range(len(ayu)):
-    idx = get_top_k(sim_matrix[i], k=3)
-
-    top1.append(icd.iloc[idx[0]]["code"])
-    top3.append(list(icd.iloc[idx]["code"]))
-
-ayu["pred_top1"] = top1
-ayu["pred_top3"] = top3
+tm2_emb = model.encode(
+    tm2["final_text"].tolist(),
+    convert_to_tensor=True,
+    show_progress_bar=True
+)
 
 # ==============================
-# EVALUATION (ONLY IF LABEL EXISTS)
+# TAG FUNCTION
 # ==============================
-if "icd_code" in ayu.columns:
-    correct1 = 0
-    correct3 = 0
-    total = 0
-
-    for i in range(len(ayu)):
-        true = safe(ayu.iloc[i]["icd_code"])
-        if true == "":
-            continue
-
-        total += 1
-
-        if true == safe(ayu.iloc[i]["pred_top1"]):
-            correct1 += 1
-
-        if true in ayu.iloc[i]["pred_top3"]:
-            correct3 += 1
-
-    if total > 0:
-        print("\n📊 Evaluation")
-        print("Top-1 Accuracy:", round(correct1 / total, 4))
-        print("Top-3 Accuracy:", round(correct3 / total, 4))
+def assign_tag(score, dict_match):
+    if dict_match:
+        return "Equivalent"
+    elif score > 0.75:
+        return "Equivalent"
+    elif score > 0.60:
+        return "Narrower"
+    elif score > 0.45:
+        return "Related"
     else:
-        print("\n⚠️ No labeled data for evaluation")
+        return "Weak"
 
 # ==============================
-# SAVE OUTPUT
+# MAPPING (TOP-3)
 # ==============================
-OUTPUT_FILE = "results.csv"
-ayu.to_csv(OUTPUT_FILE, index=False)
+results = []
 
-print("\n💾 Results saved:", OUTPUT_FILE)
+for i in tqdm(range(len(ayu)), desc="Mapping"):
+    bert_scores = util.cos_sim(ayu_emb[i], tm2_emb)[0].cpu().numpy()
+
+    top_candidates = np.argsort(bert_scores)[-50:]
+
+    sanskrit = ayu.iloc[i]["namc_term_diacritical"]
+
+    reranked = []
+
+    for j in top_candidates:
+        score = bert_scores[j]
+        score += 0.25 * tfidf_sim[i][j]
+
+        dict_match = False
+        if sanskrit in sanskrit_to_tm2:
+            if tm2.iloc[j]["code"] in sanskrit_to_tm2[sanskrit]:
+                score += 1.2
+                dict_match = True
+
+        reranked.append((j, score, dict_match))
+
+    reranked = sorted(reranked, key=lambda x: x[1], reverse=True)[:3]
+
+    row_out = {"namc_code": ayu.iloc[i]["namc_code"]}
+
+    for k, (j, score, dict_match) in enumerate(reranked):
+        tag = assign_tag(score, dict_match)
+
+        row_out[f"top{k+1}_pred"] = tm2.iloc[j]["code"]
+        row_out[f"top{k+1}_tag"] = tag
+        row_out[f"top{k+1}_score"] = score
+
+    results.append(row_out)
+
+mapping_df = pd.DataFrame(results)
+mapping_df.to_csv("mapping_output_final.csv", index=False)
+
+print("✅ Mapping saved")
 
 # ==============================
-# SAMPLE OUTPUT
+# EVALUATION (CORRECT)
 # ==============================
-print("\n🔍 Sample:")
-print(ayu[[
-    "namc_code",
-    "icd_code",
-    "pred_top1",
-    "pred_top3"
-]].head(10))
+merged = pd.merge(eval_df, mapping_df, on="namc_code", how="inner")
+
+strict = 0
+top3 = 0
+eq = 0
+eq_narrow = 0
+clinical = 0
+
+for _, r in merged.iterrows():
+    true = r["tm2_code"]
+
+    preds = [r["top1_pred"], r["top2_pred"], r["top3_pred"]]
+    tags = [r["top1_tag"], r["top2_tag"], r["top3_tag"]]
+
+    # Strict
+    if true == preds[0]:
+        strict += 1
+
+    # Top-3
+    if true in preds:
+        top3 += 1
+
+    # Equivalent
+    for p, t in zip(preds, tags):
+        if p == true and t == "Equivalent":
+            eq += 1
+
+    # Equivalent + Narrower
+    for p, t in zip(preds, tags):
+        if p == true and t in ["Equivalent", "Narrower"]:
+            eq_narrow += 1
+
+    # Clinical (Equivalent + Narrower + Related)
+    if any(p == true and t in ["Equivalent", "Narrower", "Related"] for p, t in zip(preds, tags)):
+        clinical += 1
+
+total = len(merged)
+
+print("\n📊 FINAL METRICS")
+print("Strict Top-1:", round(strict / total, 4))
+print("Top-3 Accuracy:", round(top3 / total, 4))
+print("Equivalent Accuracy:", round(eq / total, 4))
+print("Equivalent + Narrower:", round(eq_narrow / total, 4))
+print("Clinical (Eq + Nar + Rel):", round(clinical / total, 4))
+print("Coverage:", round(total / len(eval_df), 4))
+
+print(f"\n⏱️ Total time: {time.time() - start:.2f}s")

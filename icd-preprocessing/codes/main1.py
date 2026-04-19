@@ -2,6 +2,9 @@ import requests
 import csv
 import time
 
+# =========================
+# CONFIG
+# =========================
 CLIENT_ID = "28fdd4a3-ac84-49b1-be00-50b0cacf78f7_98caff9b-d075-4984-9454-f4eed404029f"
 CLIENT_SECRET = "XkMZWt4GIQlQr6pTkbZPwGDRVZ5HOuyRFZurEgBRvps="
 
@@ -10,6 +13,7 @@ BASE_URL = "https://id.who.int/icd/release/11/2026-01/mms"
 
 visited = set()
 token = None
+
 
 # =========================
 # TOKEN
@@ -25,18 +29,23 @@ def get_token():
     }
 
     r = requests.post(TOKEN_URL, data=data, timeout=10)
-    token = r.json()["access_token"]
+    token = r.json().get("access_token")
+
+    print("🔑 Token refreshed")
 
 
 # =========================
-# FETCH
+# FETCH ENTITY (NORMAL + RESIDUAL)
 # =========================
-def get_entity(entity_id):
+def get_entity(entity_id, residual=None):
     global token
 
-    url = f"{BASE_URL}/{entity_id}"
+    if residual:
+        url = f"{BASE_URL}/{entity_id}/{residual}"
+    else:
+        url = f"{BASE_URL}/{entity_id}"
 
-    for i in range(5):
+    for _ in range(5):
         try:
             headers = {
                 "Authorization": f"Bearer {token}",
@@ -47,20 +56,21 @@ def get_entity(entity_id):
             r = requests.get(url, headers=headers, timeout=10)
 
             if r.status_code == 401:
+                print("⚠️ Token expired. Refreshing...")
                 get_token()
                 continue
 
             if r.status_code == 200:
                 return r.json()
 
-        except:
+        except Exception as e:
             time.sleep(1)
 
     return None
 
 
 # =========================
-# SAFE JOIN FUNCTION
+# SAFE JOIN
 # =========================
 def safe_join(items):
     return "; ".join([
@@ -71,7 +81,7 @@ def safe_join(items):
 
 
 # =========================
-# EXTRACT
+# EXTRACT DATA
 # =========================
 def extract(data):
     code = data.get("code", "")
@@ -85,7 +95,7 @@ def extract(data):
         "Description": data.get("definition", {}).get("@value", ""),
         "Inclusions": safe_join(data.get("inclusion", [])),
         "Exclusions": safe_join(data.get("exclusion", [])),
-        "Index Terms": safe_join(data.get("indexTerm", []))   # ✅ FULL COLUMN
+        "Index Terms": safe_join(data.get("indexTerm", []))
     }
 
 
@@ -98,6 +108,9 @@ def dfs(entity_id, writer, file):
 
     visited.add(entity_id)
 
+    # =========================
+    # NORMAL ENTITY
+    # =========================
     data = get_entity(entity_id)
 
     if data:
@@ -106,17 +119,34 @@ def dfs(entity_id, writer, file):
         if row:
             writer.writerow(row)
             file.flush()
-            print("Saved:", row["Code"])
+            print("✅ Saved:", row["Code"])
 
+        # =========================
+        # 🔴 FETCH RESIDUAL NODES
+        # =========================
+        for residual in ["other", "unspecified"]:
+            residual_data = get_entity(entity_id, residual)
+
+            if residual_data:
+                row = extract(residual_data)
+
+                if row:
+                    writer.writerow(row)
+                    file.flush()
+                    print("🔴 Saved Residual:", row["Code"])
+
+        # =========================
+        # CHILD TRAVERSAL
+        # =========================
         for child in data.get("child", []):
             child_id = child.split("/")[-1]
             dfs(child_id, writer, file)
 
-    time.sleep(0.1)
+    time.sleep(0.05)  # faster but safe
 
 
 # =========================
-# MAIN
+# RUN CHAPTER
 # =========================
 def run_chapter(chapter_id, filename):
     global visited
@@ -131,20 +161,21 @@ def run_chapter(chapter_id, filename):
             "Description",
             "Inclusions",
             "Exclusions",
-            "Index Terms"   # ✅ FULL COLUMN INCLUDED
+            "Index Terms"
         ])
 
         writer.writeheader()
 
         dfs(chapter_id, writer, f)
 
-    print(f"✅ Done: {filename}")
+    print(f"\n🎉 DONE: {filename}")
 
 
 # =========================
-# RUN
+# MAIN
 # =========================
 if __name__ == "__main__":
     get_token()
 
+    # Example: Chapter 18 (TM2 included here)
     run_chapter(562274788, "tm2.csv")
