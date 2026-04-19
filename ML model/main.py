@@ -1,99 +1,157 @@
 import pandas as pd
+import re
+import unicodedata
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-# =========================================================
-# INPUT FILES
-# =========================================================
-AYURVEDA_FILE = "AYURVEDA_processed.csv"
+# ==============================
+# FILE PATHS
+# ==============================
+AYURVEDA_FILE = "ayurveda_final.csv"
 ICD_FILE = "tm2_final.csv"
 
-OUTPUT_FILE = "mapping_output.csv"
-
-# =========================================================
+# ==============================
 # LOAD DATA
-# =========================================================
-print("📥 Loading datasets...")
+# ==============================
+ayu = pd.read_csv(AYURVEDA_FILE, encoding="utf-8")
+icd = pd.read_csv(ICD_FILE, encoding="utf-8")
 
-ayu = pd.read_csv(AYURVEDA_FILE)
-icd = pd.read_csv(ICD_FILE)
+# Normalize column names
+ayu.columns = ayu.columns.str.lower().str.strip()
+icd.columns = icd.columns.str.lower().str.strip()
 
-print("Ayurveda:", ayu.shape)
-print("ICD:", icd.shape)
+print("📥 Ayurveda rows:", len(ayu))
+print("📥 ICD rows:", len(icd))
 
-# Fill missing safely
-ayu["query"] = ayu["query"].fillna("")
-icd["index_terms"] = icd["index_terms"].fillna("")
+# ==============================
+# SAFE TEXT
+# ==============================
+def safe(x):
+    if pd.isna(x):
+        return ""
+    return str(x).strip()
 
-# =========================================================
-# TF-IDF VECTORIZATION
-# =========================================================
-print("\n🧠 Building TF-IDF model...")
+# ==============================
+# CLEAN TEXT
+# ==============================
+def clean_text(text):
+    text = safe(text)
+    text = unicodedata.normalize("NFKC", text)
+    text = text.lower()
+    text = re.sub(r"[-/]", " ", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
 
-vectorizer = TfidfVectorizer(
-    max_features=50000,
-    ngram_range=(1,2),   # unigrams + bigrams
-    stop_words="english"
-)
+# ==============================
+# BUILD QUERY (ROBUST)
+# ==============================
+def build_query(row):
+    sanskrit = safe(row.get("namc_term_diacritical", ""))
+    short_def = safe(row.get("short_definition", ""))
+    long_def = safe(row.get("long_definition", ""))
 
-# Fit on ICD (search space)
-icd_vectors = vectorizer.fit_transform(icd["index_terms"])
+    return clean_text(
+        (sanskrit + " ") * 2 +
+        long_def + " " +
+        short_def
+    )
 
-# Transform Ayurveda queries
-ayu_vectors = vectorizer.transform(ayu["query"])
+ayu["query"] = ayu.apply(build_query, axis=1)
 
-print("ICD vector shape:", icd_vectors.shape)
-print("Ayurveda vector shape:", ayu_vectors.shape)
+# ==============================
+# PREPARE ICD TEXT
+# ==============================
+if "index_terms" in icd.columns:
+    icd["text"] = icd["index_terms"].fillna("")
+else:
+    icd["text"] = (
+        icd.get("title", "").astype(str) + " " +
+        icd.get("definition", "").astype(str)
+    )
 
-# =========================================================
-# SIMILARITY COMPUTATION
-# =========================================================
-print("\n🔍 Computing similarity...")
+icd["text"] = icd["text"].apply(clean_text)
 
-similarity_matrix = cosine_similarity(ayu_vectors, icd_vectors)
+# ==============================
+# TF-IDF
+# ==============================
+vectorizer = TfidfVectorizer(max_features=5000)
 
-# =========================================================
-# FIND BEST MATCH
-# =========================================================
-print("\n📊 Finding best matches...")
+# Fit on combined corpus
+all_text = list(ayu["query"]) + list(icd["text"])
+vectorizer.fit(all_text)
 
-results = []
+# Transform
+ayu_vec = vectorizer.transform(ayu["query"])
+icd_vec = vectorizer.transform(icd["text"])
 
-for i in range(similarity_matrix.shape[0]):
+print("✅ TF-IDF built")
 
-    best_idx = similarity_matrix[i].argmax()
-    best_score = similarity_matrix[i][best_idx]
+# ==============================
+# SIMILARITY
+# ==============================
+sim_matrix = cosine_similarity(ayu_vec, icd_vec)
 
-    ayu_term = ayu.iloc[i]["namc_term_diacritical"]
-    icd_code = icd.iloc[best_idx]["code"]
-    icd_title = icd.iloc[best_idx]["title"]
+# ==============================
+# TOP-K PREDICTION
+# ==============================
+def get_top_k(sim_row, k=3):
+    return sim_row.argsort()[-k:][::-1]
 
-    # Classification
-    if best_score >= 0.85:
-        relation = "equivalent"
-    elif best_score >= 0.60:
-        relation = "narrower"
-    elif best_score >= 0.40:
-        relation = "related"
+top1 = []
+top3 = []
+
+for i in range(len(ayu)):
+    idx = get_top_k(sim_matrix[i], k=3)
+
+    top1.append(icd.iloc[idx[0]]["code"])
+    top3.append(list(icd.iloc[idx]["code"]))
+
+ayu["pred_top1"] = top1
+ayu["pred_top3"] = top3
+
+# ==============================
+# EVALUATION (ONLY IF LABEL EXISTS)
+# ==============================
+if "icd_code" in ayu.columns:
+    correct1 = 0
+    correct3 = 0
+    total = 0
+
+    for i in range(len(ayu)):
+        true = safe(ayu.iloc[i]["icd_code"])
+        if true == "":
+            continue
+
+        total += 1
+
+        if true == safe(ayu.iloc[i]["pred_top1"]):
+            correct1 += 1
+
+        if true in ayu.iloc[i]["pred_top3"]:
+            correct3 += 1
+
+    if total > 0:
+        print("\n📊 Evaluation")
+        print("Top-1 Accuracy:", round(correct1 / total, 4))
+        print("Top-3 Accuracy:", round(correct3 / total, 4))
     else:
-        relation = "weak"
+        print("\n⚠️ No labeled data for evaluation")
 
-    results.append({
-        "ayurveda_term": ayu_term,
-        "icd_code": icd_code,
-        "icd_title": icd_title,
-        "similarity_score": round(float(best_score), 4),
-        "relationship": relation
-    })
-
-# =========================================================
+# ==============================
 # SAVE OUTPUT
-# =========================================================
-result_df = pd.DataFrame(results)
-result_df.to_csv(OUTPUT_FILE, index=False)
+# ==============================
+OUTPUT_FILE = "results.csv"
+ayu.to_csv(OUTPUT_FILE, index=False)
 
-print("\n✅ Mapping completed!")
-print("💾 Saved:", OUTPUT_FILE)
+print("\n💾 Results saved:", OUTPUT_FILE)
 
+# ==============================
+# SAMPLE OUTPUT
+# ==============================
 print("\n🔍 Sample:")
-print(result_df.head(10))
+print(ayu[[
+    "namc_code",
+    "icd_code",
+    "pred_top1",
+    "pred_top3"
+]].head(10))

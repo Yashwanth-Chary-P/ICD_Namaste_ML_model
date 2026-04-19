@@ -1,94 +1,78 @@
 import pandas as pd
-import re
-import unicodedata
 
-# =========================================================
+# ==============================
 # INPUT / OUTPUT
-# =========================================================
-INPUT_FILE = "AYURVEDA.csv"
-OUTPUT_FILE = "AYURVEDA_processed.csv"
+# ==============================
+INPUT_FILE = "AYURVEDA.csv"   # your raw file
+OUTPUT_FILE = "ayurveda_final.csv"
 
-# =========================================================
+# ==============================
 # LOAD DATA
-# =========================================================
+# ==============================
 df = pd.read_csv(INPUT_FILE, encoding="utf-8")
+
+# Normalize column names
 df.columns = df.columns.str.lower().str.strip()
 
 print("📥 Loaded dataset")
-print("Columns:", df.columns.tolist())
+print("Columns found:", df.columns.tolist())
+print("Total rows:", len(df))
 
-# =========================================================
-# SAFE TEXT HANDLER
-# =========================================================
-def safe(x):
-    if pd.isna(x):
-        return ""
-    return str(x).strip()
+# ==============================
+# RENAME IMPORTANT COLUMNS
+# ==============================
+df.rename(columns={
+    "primary index related thecode": "icd_code"
+}, inplace=True)
 
-# =========================================================
-# CLEAN TEXT (LIKE ICD BUT SAFE FOR SANSKRIT)
-# =========================================================
-def clean_text(text):
-    text = safe(text)
+# ==============================
+# ENSURE REQUIRED COLUMNS EXIST
+# ==============================
+required_columns = {
+    "namc_code": "",
+    "namc_term_diacritical": "",
+    "short_definition": "",
+    "long_definition": "",
+    "icd_code": ""
+}
 
-    # preserve unicode characters
-    text = unicodedata.normalize("NFKC", text)
+for col in required_columns:
+    if col not in df.columns:
+        print(f"⚠️ Missing column: {col} → creating empty")
+        df[col] = ""
 
-    text = text.lower()
+# ==============================
+# SELECT ONLY REQUIRED COLUMNS
+# ==============================
+df_final = df[list(required_columns.keys())].copy()
 
-    # minimal cleaning (DO NOT REMOVE diacritics)
-    text = re.sub(r"[-/]", " ", text)
+# ==============================
+# CLEAN TEXT (SAFE)
+# ==============================
+df_final.fillna("", inplace=True)
 
-    # remove only excessive spaces
-    text = re.sub(r"\s+", " ", text).strip()
+# Strip spaces
+for col in df_final.columns:
+    df_final[col] = df_final[col].astype(str).str.strip()
 
-    return text
+# ==============================
+# REMOVE EMPTY ICD ROWS (OPTIONAL)
+# ==============================
+# Uncomment if needed:
+# df_final = df_final[df_final["icd_code"] != ""]
 
-# =========================================================
-# BUILD QUERY (ICD-LIKE WEIGHTING)
-# =========================================================
-def build_query(row):
-
-    sanskrit = safe(row.get("namc_term_diacritical"))
-    base_term = safe(row.get("namc_term"))
-    dev = safe(row.get("namc_term_devanagari"))
-    long_def = safe(row.get("long_definition"))
-    short_def = safe(row.get("short_definition"))
-
-    # weighted combination (same principle as ICD index_terms)
-    combined = (
-        (sanskrit + " ") * 2 +        # strongest signal
-        (base_term + " ") * 1 +
-        (dev + " ") * 1 +
-        long_def + " " +
-        short_def
-    )
-
-    combined = clean_text(combined)
-
-    return combined
-
-df["query"] = df.apply(build_query, axis=1)
-
-# =========================================================
-# FINAL DATASET
-# =========================================================
-df_final = df[[
-    "namc_code",
-    "namc_term_diacritical",
-    "query"
-]]
-
-# =========================================================
-# SAVE
-# =========================================================
+# ==============================
+# SAVE FINAL DATASET
+# ==============================
 df_final.to_csv(OUTPUT_FILE, index=False, encoding="utf-8")
 
-# =========================================================
+# ==============================
 # VERIFY
-# =========================================================
-print("\n✅ Preprocessing completed")
-print("💾 Saved:", OUTPUT_FILE)
+# ==============================
+print("\n✅ Dataset rebuilt successfully")
+print("💾 Saved as:", OUTPUT_FILE)
+print("📊 Total rows:", len(df_final))
+print("📊 Unique ICD codes:", df_final["icd_code"].nunique())
 
-print("\n🔍 Sample output:")
-print(df_final.head(5).to_string(index=False))
+print("\n🔍 Sample:")
+print(df_final.head(5))
