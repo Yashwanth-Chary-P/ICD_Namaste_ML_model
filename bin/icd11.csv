@@ -1,0 +1,704 @@
+Code,title,Fully Specified Name,Description,Inclusions,Exclusions
+23,External causes of morbidity or mortality,,"!markdown
+The WHO definition of an ‘injury’ is: ‘Injuries are caused by acute exposure to physical agents such as mechanical energy, heat, electricity, chemicals, and ionizing radiation interacting with the body in amounts or at rates that exceed the threshold of human tolerance. In some cases, (for example, drowning and frostbite), injuries result from the sudden lack of essential agents such as oxygen or heat.
+Injuries may be categorized in a number of ways. However, for most analytical purposes and for identifying intervention opportunities, it is especially useful to categorize injuries according to whether or not they were deliberately inflicted and by whom. Commonly used categories are:
+
+- unintentional (i.e. accidental)
+- intentional (i.e. deliberate):
+- interpersonal (e.g. assault and homicide)
+- self-harm (e.g. abuse of drugs and alcohol, self-mutilation, suicide)
+- legal intervention (e.g. action by police or other law enforcement personnel)
+- war, civil insurrection and disturbances (e.g. demonstrations and riots)
+- undetermined intent
+
+Regarding the collection of events that cause injuries, a set of definitions apply. See ICD-11 Reference guide sections 2.21.8.9 'Coding of transport injury events', and 2.23.19 'Standards and coding instructions for injury events'.",,
+PA00,Unintentional land transport traffic event injuring a pedestrian,,,,
+PA01,Unintentional land transport traffic event injuring the user of a pedestrian conveyance,,,,
+PA02,Unintentional land transport traffic event injuring a pedal cyclist,,,,
+PA03,Unintentional land transport traffic event injuring a motor cyclist,,,,Unintentional land transport traffic event injuring an occupant of a low powered passenger vehicle
+PA04,Unintentional land transport traffic event injuring a car occupant,,,,
+PA05,Unintentional land transport traffic event injuring an occupant of a bus or coach,,,,
+PA06,Unintentional land transport traffic event injuring an occupant of a light goods vehicle,,,,
+PA07,Unintentional land transport traffic event injuring an occupant of a heavy goods vehicle,,,,
+PA08,Unintentional land transport traffic event injuring an occupant of a streetcar or tram,,,,
+PA09,Unintentional land transport traffic event injuring an occupant of a low powered passenger vehicle,,,,
+PA0A,Unintentional land transport traffic event injuring a user of a special vehicle mainly used in agriculture,,,,
+PA0B,Unintentional land transport traffic event injuring a user of a special vehicle mainly used on industrial premises,,,,
+PA0C,Unintentional land transport traffic event injuring a user of a special construction vehicle,,,,
+PA0D,Unintentional land transport traffic event injuring a user of an all-terrain vehicle,,,,
+PA0E,Unintentional land transport traffic event injuring a rider of an animal,,,,
+PA0F,Unintentional land transport traffic event injuring an occupant of an animal-drawn vehicle,,,,
+PA10,Unintentional land transport nontraffic event injuring a pedestrian,,,,
+PA11,Unintentional land transport nontraffic event injuring the user of a pedestrian conveyance,,,,
+PA12,Unintentional land transport nontraffic event injuring a pedal cyclist,,,,
+PA13,Unintentional land transport nontraffic event injuring a motor cyclist,,,,
+PA14,Unintentional land transport nontraffic event injuring a car occupant,,,,
+PA15,Unintentional land transport nontraffic event injuring an occupant of a bus or coach,,,,
+PA16,Unintentional land transport nontraffic event injuring an occupant of a light goods vehicle,,,,
+PA17,Unintentional land transport nontraffic event injuring an occupant of a heavy goods vehicle,,,,
+PA18,Unintentional land transport nontraffic event injuring an occupant of a streetcar or tram,,,,
+PA19,Unintentional land transport nontraffic event injuring an occupant of a low powered passenger vehicle,,,,
+PA1A,Unintentional land transport nontraffic event injuring a user of a special vehicle mainly used in agriculture,,,,
+PA1B,Unintentional land transport nontraffic event injuring a user of a special vehicle mainly used on industrial premises,,,,
+PA1C,Unintentional land transport nontraffic event injuring a user of a special construction vehicle,,,,
+PA1D,Unintentional land transport nontraffic event injuring a user of an all-terrain vehicle,,,,
+PA1E,Unintentional land transport nontraffic event injuring a rider of an animal,,,,
+PA1F,Unintentional land transport nontraffic event injuring an occupant of an animal-drawn vehicle,,,,
+PA20,Unintentional land transport event unknown whether traffic or nontraffic injuring a pedestrian,,,,
+PA21,Unintentional land transport event unknown whether traffic or nontraffic injuring the user of a pedestrian conveyance,,,,
+PA22,Unintentional land transport event unknown whether traffic or nontraffic injuring a pedal cyclist,,,,
+PA23,Unintentional land transport event unknown whether traffic or nontraffic injuring a motor cyclist,,,,
+PA24,Unintentional land transport event unknown whether traffic or nontraffic injuring a car occupant,,,,
+PA25,Unintentional land transport event unknown whether traffic or nontraffic injuring an occupant of a bus or coach,,,,
+PA26,Unintentional land transport event unknown whether traffic or nontraffic injuring an occupant of a light goods vehicle,,,,
+PA27,Unintentional land transport event unknown whether traffic or nontraffic injuring an occupant of a heavy goods vehicle,,,,
+PA28,Unintentional land transport event unknown whether traffic or nontraffic injuring an occupant of a streetcar or tram,,,,
+PA29,Unintentional land transport event unknown whether traffic or nontraffic injuring an occupant of a low powered passenger vehicle,,,,
+PA2A,Unintentional land transport event unknown whether traffic or nontraffic injuring an occupant of a special vehicle mainly used in agriculture,,,,
+PA2B,Unintentional land transport event unknown whether traffic or nontraffic injuring an occupant of a special vehicle mainly used on industrial premises,,,,
+PA2C,Unintentional land transport event unknown whether traffic or nontraffic injuring an occupant of a special construction vehicle,,,,
+PA2D,Unintentional land transport event unknown whether traffic or nontraffic injuring an occupant of an all-terrain vehicle,,,,
+PA2E,Unintentional land transport event unknown whether traffic or nontraffic injuring a rider of an animal,,,,
+PA2F,Unintentional land transport event unknown whether traffic or nontraffic injuring an occupant of an animal-drawn vehicle,,,,
+PA30,Unintentional railway transport injury event with collision or derailment,,,,
+PA31,Unintentional railway transport injury event without collision or derailment,,,,
+PA40,"Unintentional water transport injury event with water vessel not damaged, disabled or destroyed",,,,
+PA40.0,"Unintentional water transport injury event with water vessel not damaged, disabled or destroyed, causing submersion or drowning",,,,
+PA40.1,"Unintentional water transport injury event with water vessel not damaged, disabled or destroyed, causing other injury",,,,
+PA41,"Unintentional water transport injury event with water vessel damaged, disabled or destroyed",,,,
+PA41.0,"Unintentional water transport injury event with water vessel damaged, disabled or destroyed, causing submersion or drowning",,,drowning and submersion due to boat sinking,"Unintentional water transport injury event with water vessel not damaged, disabled or destroyed, causing submersion or drowning"
+PA50,Unintentional air or space transport injury event,,,,
+PA50.0,"Unintentional air or space transport injury event with aircraft or spacecraft not damaged, disabled or destroyed",,,,
+PA50.1,"Unintentional air or space transport injury event with aircraft or spacecraft damaged, disabled or destroyed",,,,
+PA60,Unintentional fall on the same level or from less than 1 metre,,,,Fall in health care; Fall while in hospital; Fall from hospital bed
+PA61,Unintentional fall from a height of 1 metre or more,,,,Fall in health care; Fall from animal
+PA70,"Unintentionally struck, kicked, or bumped by person",,,,
+PA71,"Unintentionally struck, kicked, or bumped by animal",,,,
+PA72,Unintentionally stepped on or crushed by person,,,,
+PA73,Unintentionally stepped on or crushed by animal,,,,
+PA74,Unintentionally bitten by person,,,,
+PA75,Unintentionally bitten by animal,,,,
+PA76,Unintentionally scratched or clawed by person,,,,
+PA77,Unintentionally scratched or clawed by animal,,,,
+PA78,Unintentionally stung or envenomated by animal,,,,
+PA79,Unintentionally injured by contact with plant,,,,
+PA80,Unintentionally struck by projectile from firearm,,,shot NOS,
+PA80.0,Unintentionally struck by projectile from handgun,,,gun for single hand use,
+PA80.1,"Unintentionally struck by projectile from rifle, shotgun or larger firearm",,,,
+PA81,Unintentionally struck by moving object,,,,
+PA82,Unintentional striking against stationary object,,,,
+PA83,Unintentionally cut or pierced by sharp object,,,,
+PA83.0,"Unintentionally cut or pierced by knife, sword, or dagger",,,,
+PA83.1,Unintentionally cut or pierced by sharp glass,,,,
+PA83.2,Unintentionally cut or pierced by other or unspecified sharp object,,,,
+PA84,Unintentionally struck by blunt object,,,,
+PA85,"Unintentionally caught, crushed, jammed or pinched between objects",,,,
+PA90,"Unintentional drowning or submersion, while in body of water",,,,
+PA91,"Unintentional drowning or submersion, following fall into body of water",,,,
+PA92,Unintentional injury other than drowning following fall into body of water,,,,
+PB00,Unintentional threat to breathing by suffocation from object covering mouth or nose,,,,
+PB01,Unintentional threat to breathing by hanging,,,,
+PB02,Unintentional threat to breathing by strangulation,,,,
+PB03,Unintentional threat to breathing by external compression of airways or chest,,,,Unintentional threat to breathing by hanging; Unintentional threat to breathing by strangulation
+PB04,Unintentional threat to breathing by inhalation or ingestion of gastric contents,,,,
+PB05,Unintentional threat to breathing by inhalation or ingestion of liquids,,,,
+PB06,Unintentional threat to breathing by inhalation or ingestion of food,,,,
+PB07,Unintentional threat to breathing by inhalation or ingestion of other objects or materials,,,,
+PB08,Unintentional threat to breathing from low oxygen environment,,,,
+PB10,Unintentional exposure to uncontrolled fire,,,,
+PB11,Unintentional exposure to controlled fire,,,,
+PB12,Unintentional exposure to ignition or melting of material,,,,
+PB13,Unintentional contact with hot object or liquid,,,,
+PB14,"Unintentional exposure to steam, hot vapour, air or gases",,,,
+PB15,Unintentional exposure to excessive heat,,,,
+PB16,Unintentional exposure to excessive cold,,,,
+PB20,Unintentional exposure to or harmful effects of opioids or related analgesics,,,accidental overdose of opioids or related analgesics,Substances associated with injury or harm in therapeutic use
+PB21,Unintentional exposure to or harmful effects of sedative hypnotic drugs or other CNS depressants,,,accidental overdose by sedative hypnotic drugs or other CNS depressants,Substances associated with injury or harm in therapeutic use
+PB22,Unintentional exposure to or harmful effects of psychostimulants,,,accidental overdose of psychostimulants,Substances associated with injury or harm in therapeutic use
+PB23,Unintentional exposure to or harmful effects of cannabinoids or hallucinogens,,,accidental overdose of cannabinoids or hallucinogens,Substances associated with injury or harm in therapeutic use
+PB24,"Unintentional exposure to or harmful effects of analgesics, antipyretics or nonsteroidal anti-inflammatory drugs",,,"accidental overdose of analgesics, antipyretics or nonsteroidal anti-inflammatory drugs",Substances associated with injury or harm in therapeutic use
+PB25,Unintentional exposure to or harmful effects of antidepressants,,,accidental overdose of antidepressants,Substances associated with injury or harm in therapeutic use
+PB26,Unintentional exposure to or harmful effects of antipsychotics,,,accidental overdose of antipsychotics,Substances associated with injury or harm in therapeutic use
+PB27,Unintentional exposure to or harmful effects of antiepileptics or antiparkinsonism drugs,,,accidental overdose of antiepileptics or antiparkinsonism drugs,Substances associated with injury or harm in therapeutic use
+PB28,"Unintentional exposure to or harmful effects of other or unspecified drug, medicament or biological substance",,,,
+PB29,"Unintentional exposure to or harmful effects of multiple drugs, medicaments or biological substances",,,"accidental overdose of multiple drugs, medicaments or biological substances",
+PB30,Unintentional exposure to or harmful effects of alcohols,,,,
+PB31,Unintentional exposure to or harmful effects of organic solvents,,,,
+PB32,Unintentional exposure to or harmful effects of carbon monoxide,,,,
+PB33,Unintentional exposure to or harmful effects of pesticides,,,,
+PB34,Unintentional exposure to or harmful effects of corrosive substances,,,,
+PB35,Unintentional exposure to or harmful effects of halogen derivatives of aliphatic or aromatic hydrocarbons,,,,
+PB36,Unintentional exposure to or harmful effects of other or unspecified substances chiefly nonmedicinal as to source,,,,
+PB50,Unintentional exposure to foreign body in orifice,,,,
+PB51,Unintentional exposure to electric current,,,,
+PB52,Unintentional exposure to sunlight,,,,
+PB53,Unintentional exposure to radiation,,,,
+PB54,Unintentional exposure to high or low air pressure or changes in air pressure,,,,
+PB55,Unintentional exposure to explosion,,,,
+PB55.0,Unintentional exposure to chemical explosion,,,,
+PB55.1,Unintentional exposure to explosion or rupture of pressurised materials or object,,,,
+PB56,Unintentional exposure to physical overexertion,,,,
+PB57,Unintentional lack of food,,,,
+PB58,Unintentional lack of water,,,,
+PB59,Unintentional other specified privation,,,,
+PB5A,Unintentional abandonment,,,,
+PB5B,Unintentional neglect,,,,
+PB80,Intentional self-harm by land transport road traffic injury event,,,,
+PB81,Intentional self-harm by land transport off-road nontraffic injury event,,,,
+PB82,Intentional self-harm by land transport injury event unknown whether traffic or nontraffic,,,,
+PB83,Intentional self-harm by railway transport injury event,,,,
+PB90,"Intentional self-harm by water transport injury event with water vessel damaged, disabled or destroyed",,,,
+PB91,"Intentional self-harm by water transport injury event with water vessel not damaged, disabled or destroyed",,,,
+PB91.0,"Intentional self-harm by water transport injury event with water vessel not damaged, disabled or destroyed causing submersion or drowning",,,,
+PB91.1,"Intentional self-harm by water transport injury event with water vessel not damaged, disabled or destroyed causing other injury",,,,
+PC00,"Intentional self-harm by air or space transport injury event with aircraft or spacecraft damaged, disabled or destroyed",,,,
+PC01,"Intentional self-harm by air or space transport injury event with aircraft or spacecraft not damaged, disabled or destroyed",,,,
+PC30,Intentional self-harm by fall or jump on same level or from less than 1 metre,,,,
+PC31,Intentional self-harm by fall or jump from a height of 1 metre or more,,,,
+PC40,"Intentional self-harm by being struck, kicked, or bumped by person",,,,
+PC41,"Intentional self-harm by being struck, kicked, or bumped by animal",,,,
+PC42,Intentional self-harm by being stepped on or crushed by person,,,,
+PC43,Intentional self-harm by being stepped on or crushed by animal,,,,
+PC44,Intentional self-harm by being bitten by animal,,,,
+PC45,Intentional self-harm by being scratched or clawed by person,,,,
+PC46,Intentional self-harm by being scratched or clawed by animal,,,,
+PC47,Intentional self-harm by being stung or envenomated by animal,,,,
+PC48,Intentional self-harm by contact with plant,,,,
+PC50,Intentional self-harm by being struck by projectile from firearm,,,,
+PC50.0,Intentional self-harm by projectile from handgun,,,,
+PC50.1,"Intentional self-harm by projectile from rifle, shotgun or larger firearm",,,,
+PC51,"Intentional self-harm by being struck by moving object, not elsewhere classified",,,,
+PC52,Intentional self-harm by striking against stationary object,,,,
+PC53,Intentional self-harm by being cut or pierced by sharp object,,,,
+PC53.0,"Intentional self-harm by being cut or pierced by knife, sword or dagger",,,,
+PC53.1,Intentional self-harm by being cut or pierced by sharp glass,,,,
+PC54,Intentional self-harm by being struck by blunt object,,,,
+PC55,"Intentional self-harm by being caught, crushed, jammed or pinched between objects",,,,
+PC60,Intentional self-harm by drowning or submersion while in body of water,,,,
+PC61,Intentional self-harm by drowning or submersion following fall into body of water,,,,
+PC62,Intentional self-harm by injury other than drowning while in body of water,,,,
+PC63,Intentional self-harm by injury other than drowning following fall into body of water,,,,
+PC70,Intentional self-harm by threat to breathing by suffocation from object covering mouth or nose,,,,
+PC71,Intentional self-harm by threat to breathing by hanging,,,,
+PC72,Intentional self-harm by threat to breathing by strangulation,,,,
+PC73,Intentional self-harm by threat to breathing by external compression of airways or chest,,,,Intentional self-harm by threat to breathing by hanging; Intentional self-harm by threat to breathing by strangulation
+PC74,Intentional self-harm by inhalation or ingestion of gastric contents,,,,
+PC75,Intentional self-harm by threat to breathing by inhalation or ingestion of liquids,,,,
+PC76,Intentional self-harm by threat to breathing by inhalation or ingestion of food,,,,
+PC77,Intentional self-harm by threat to breathing by inhalation or ingestion of other objects or materials,,,,
+PC78,Intentional self-harm by threat to breathing from low oxygen environment,,,,
+PC80,Intentional self-harm by exposure to controlled fire,,,,
+PC81,Intentional self-harm by exposure to uncontrolled fire,,,,
+PC82,Intentional self-harm by exposure to ignition or melting of material,,,,
+PC83,Intentional self-harm by contact with hot object or liquid,,,,
+PC84,"Intentional self-harm by exposure to steam, hot vapour, air or gases",,,,
+PC85,Intentional self-harm by exposure to excessive heat,,,,
+PC86,Intentional self-harm by exposure to excessive cold,,,,
+PC90,Intentional self-harm by exposure to or harmful effects of opioids or related analgesics,,,,
+PC91,Intentional self-harm by exposure to or harmful effects of sedative hypnotic drugs or other CNS depressants,,,,
+PC92,Intentional self-harm by exposure to or harmful effects of psychostimulants,,,,
+PC93,Intentional self-harm by exposure to or harmful effects of cannabinoids or hallucinogens,,,,
+PC94,"Intentional self-harm by exposure to or harmful effects of analgesics, antipyretics or nonsteroidal anti-inflammatory drugs",,,,
+PC95,Intentional self-harm by exposure to or harmful effects of antidepressants,,,,
+PC96,Intentional self-harm by exposure to or harmful effects of antipsychotics,,,,
+PC97,Intentional self-harm by exposure to or harmful effects of antiepileptics or antiparkinsonism drugs,,,,
+PC98,"Intentional self-harm by exposure to other or unspecified drug, medicament or biological substance",,,,
+PC99,"Intentional self-harm by exposure to or harmful effects of multiple drugs, medicaments or biological substances",,,,
+PD00,Intentional self-harm by exposure to or harmful effects of alcohols,,,,
+PD01,Intentional self-harm by exposure to or harmful effects of organic solvents,,,,
+PD02,Intentional self-harm by exposure to or harmful effects of carbon monoxide,,,,
+PD03,Intentional self-harm by exposure to or harmful effects of pesticides,,,,
+PD04,Intentional self-harm by exposure to or harmful effects of corrosive substances,,,,
+PD05,Intentional self-harm by exposure to or harmful effects of other or unspecified substances chiefly nonmedicinal as to source,,,,
+PD20,Intentional self-harm by foreign body in orifice,,,,
+PD21,Intentional self-harm by exposure to electric current,,,,
+PD22,Intentional self-harm by exposure to sunlight,,,,
+PD23,Intentional self-harm by exposure to radiation,,,,
+PD24,Intentional self-harm by exposure to high or low air pressure or changes in air pressure,,,,
+PD25,Intentional self-harm by explosion or rupture of pressurised materials or object,,,,
+PD26,Intentional self-harm by physical overexertion,,,,
+PD27,Intentional self-harm by lack of food,,,,
+PD28,Intentional self-harm by lack of water,,,,
+PD29,Intentional self-harm by other specified privation,,,,
+PD50,Assault by land transport road traffic injury event,,,,
+PD51,Assault by land transport off-road nontraffic injury event,,,,
+PD52,Assault by land transport injury event unknown whether road traffic or off-road nontraffic,,,,
+PD53,Assault by railway transport injury event,,,,
+PD60,"Assault by water transport injury event with water vessel damaged, disabled or destroyed",,,,
+PD60.0,"Assault by water transport injury event with water vessel damaged, disabled or destroyed, causing submersion or drowning",,,,
+PD60.1,"Assault by water transport injury event with water vessel damaged, disabled or destroyed, causing other injury",,,,
+PD61,"Assault by water transport injury event with water vessel not damaged, disabled or destroyed",,,,
+PD61.0,"Assault by water transport injury event with water vessel not damaged, disabled or destroyed, causing submersion or drowning",,,,
+PD61.1,"Assault by water transport injury event with water vessel not damaged, disabled or destroyed, causing other injury",,,,
+PD70,"Assault by air or space transport injury event with aircraft or spacecraft damaged, disabled or destroyed",,,,
+PD71,"Assault by air or space transport injury event with aircraft or spacecraft not damaged, disabled or destroyed",,,,
+PE00,Assault by causing a fall or jump on same level or from less than 1 metre,,,,
+PE01,Assault by causing a fall or jump from a height of 1 metre or more,,,,
+PE10,"Assault by being struck, kicked or bumped by person",,,,
+PE11,"Assault by being struck, kicked or bumped by animal",,,,
+PE12,Assault by being crushed or stepped on by person,"Assault: Contact with person, animal or plant: Crushed, stepped on: Person",,,
+PE13,Assault by being crushed or stepped on by animal,,,,
+PE14,Assault by being bitten by person,"Assault: Contact with person, animal or plant: Bitten, scratched or stung, non-venomous: Person",,,
+PE15,Assault by being bitten by animal,,,,
+PE16,Assault by being scratched or clawed by person,,,,
+PE17,Assault by being scratched or clawed by animal,,,,
+PE18,Assault by being stung or envenomated by animal,"Assault: Contact with person, animal or plant: Envenomation",,,
+PE19,Assault by contact with plant,,,,
+PE20,Assault by projectile from firearm,,,,
+PE20.0,Assault by projectile from handgun,,,,
+PE20.1,"Assault by projectile from rifle, shotgun or larger firearm",,,,
+PE21,"Assault by being struck by moving object, not elsewhere classified",,,,
+PE22,Assault by striking against stationary object,,,,
+PE30,"Assault by being cut or pierced by knife, sword, or dagger",,,,
+PE31,Assault by being cut or pierced by sharp glass,,,,
+PE40,Assault by being struck by blunt object,,,,
+PE41,"Assault by being caught, crushed, jammed or pinched between objects",,,,
+PE50,"Assault by drowning or submersion, while in body of water",Assault: Drowning or submersion: While in body of water,,,
+PE51,Assault by drowning or submersion following fall into body of water,,,,
+PE52,Assault by injury other than drowning while in body of water,,,,
+PE53,Assault by injury other than drowning following fall into body of water,,,,
+PE60,"Assault by threat to breathing, suffocation from object covering mouth or nose",,,,
+PE61,Assault by threat to breathing by hanging,,,,
+PE62,Assault by threat to breathing by strangulation,,,,
+PE63,Assault by threat to breathing by external compression of airways or chest,,,,Assault by threat to breathing by hanging; Assault by threat to breathing by strangulation
+PE64,Assault by threat to breathing by inhalation or ingestion of liquids,,,,
+PE65,Assault by threat to breathing by inhalation or ingestion of food,,,,
+PE66,Assault by threat to breathing by inhalation or ingestion of other objects or materials,,,,
+PE67,Assault by threat to breathing by low oxygen environment,,,,
+PE70,Assault by exposure to uncontrolled fire,,,,
+PE71,Assault by exposure to controlled fire,,,,
+PE72,Assault by exposure to ignition or melting of materials,,,,
+PE73,Assault by contact with hot object or liquid,,,,
+PE74,"Assault by contact with steam, hot vapour, air or gases",,,,
+PE75,Assault by exposure to excessive heat,,,,
+PE76,Assault by exposure to excessive cold,,,,
+PE80,Assault by exposure to or harmful effects of opioids or related analgesics,,,,
+PE81,"Assault by exposure to or harmful effects of sedative, hypnotic drugs or other CNS depressants",,,,
+PE82,Assault by exposure to or harmful effects of psychostimulants,,,,
+PE83,Assault by exposure to or harmful effects of cannabinoids or hallucinogens,,,,
+PE84,"Assault by exposure to or harmful effects of analgesics, antipyretics or nonsteroidal anti-inflammatory drugs",,,,
+PE85,Assault by exposure to or harmful effects of antidepressants,,,,
+PE86,Assault by exposure to or harmful effects of antipsychotics,,,,
+PE87,Assault by exposure to or harmful effects of antiepileptics or antiparkinsonism drugs,,,,
+PE88,"Assault by exposure to or harmful effects of other or unspecified drug, medicament or biological substance",,,,
+PE89,"Assault by exposure to or harmful effects of multiple drugs, medicaments or biological substances",,,,
+PE90,Assault by exposure to or harmful effects of alcohols,,,,
+PE91,Assault by exposure to or harmful effects of organic solvents,,,,
+PE92,Assault by exposure to or harmful effects of carbon monoxide,,,,
+PE93,Assault by exposure to or harmful effects of pesticides,,,,
+PE94,Assault by exposure to or harmful effects of corrosive substances,,,,
+PE95,Assault by exposure to or harmful effects of other or unspecified substances chiefly nonmedicinal as to source,,,,
+PF10,Assault by foreign body in orifice or eye,,,,
+PF11,Assault by exposure to electric current,,,,
+PF12,Assault by exposure to sunlight,,,,
+PF13,Assault by exposure to radiation,,,,
+PF14,Assault by exposure to high or low air pressure or changes in air pressure,,,,
+PF15,Assault by exposure to explosion,,,,
+PF15.0,Assault by exposure to chemical explosion,,,,
+PF15.1,Assault by explosion or rupture of materials or object,,,,
+PF16,Assault by physical overexertion,,,,
+PF17,Assault by lack of food,,,,
+PF18,Assault by lack of water,,,,
+PF19,Assault by other specified privation,,,,
+PF1A,Assault by abandonment,,,,
+PF1B,Assault by neglect,,,,
+PF40,Land transport traffic injury event of undetermined intent injuring a pedestrian,,,,
+PF41,Land transport traffic injury event of undetermined intent injuring the user of a pedestrian conveyance,,,,
+PF42,Land transport traffic injury event of undetermined intent injuring a pedal cyclist,,,,
+PF43,Land transport traffic injury event of undetermined intent injuring a motor cyclist,,,,
+PF44,Land transport traffic injury event of undetermined intent injuring a car occupant,,,,
+PF45,Land transport traffic injury event of undetermined intent injuring a bus or coach occupant,,,,
+PF46,Land transport traffic injury event of undetermined intent injuring an occupant of light goods vehicle,,,,
+PF47,Land transport traffic injury event of undetermined intent injuring an occupant of heavy goods vehicle,,,,
+PF48,Land transport traffic injury event of undetermined intent injuring an occupant of a streetcar or tram,,,,
+PF49,Land transport traffic injury event of undetermined intent injuring an occupant of a low powered passenger vehicle,,,,
+PF4A,Land transport traffic injury event of undetermined intent injuring a user of a special vehicle mainly used in agriculture,,,,
+PF4B,Land transport traffic injury event of undetermined intent injuring a user of a special vehicle mainly used on industrial premises,,,,
+PF4C,Land transport traffic injury event of undetermined intent injuring a user of a special construction vehicle,,,,
+PF4D,Land transport traffic injury event of undetermined intent injuring a user of an all-terrain vehicle,,,,
+PF4E,Land transport traffic injury event of undetermined intent injuring a rider of an animal,,,,
+PF4F,Land transport traffic injury event of undetermined intent injuring an occupant of an animal-drawn vehicle,,,,
+PF50,Land transport nontraffic injury event of undetermined intent injuring a pedestrian,,,,
+PF51,Land transport nontraffic injury event of undetermined intent injuring the user of a pedestrian conveyance,,,,
+PF52,Land transport nontraffic injury event of undetermined intent injuring a pedal cyclist,,,,
+PF53,Land transport nontraffic injury event of undetermined intent injuring a motor cyclist,,,,
+PF54,Land transport nontraffic injury event of undetermined intent injuring a car occupant,,,,
+PF55,Land transport nontraffic injury event of undetermined intent injuring a bus or coach occupant,,,,
+PF56,Land transport nontraffic injury event of undetermined intent injuring an occupant of light goods vehicle,,,,
+PF57,Land transport nontraffic injury event of undetermined intent injuring an occupant of heavy goods vehicle,,,,
+PF58,Land transport nontraffic injury event of undetermined intent injuring an occupant of a streetcar or tram,,,,
+PF59,Land transport nontraffic injury event of undetermined intent injuring an occupant of a low powered passenger vehicle,,,,
+PF5A,Land transport nontraffic injury event of undetermined intent injuring a user of a special vehicle mainly used in agriculture,,,,
+PF5B,Land transport nontraffic injury event of undetermined intent injuring a user of a special vehicle mainly used on industrial premises,,,,
+PF5C,Land transport nontraffic injury event of undetermined intent injuring a user of a special construction vehicle,,,,
+PF5D,Land transport nontraffic injury event of undetermined intent injuring a user of an all-terrain vehicle,,,,
+PF5E,Land transport nontraffic injury event of undetermined intent injuring a rider of an animal,,,,
+PF5F,Land transport nontraffic injury event of undetermined intent injuring an occupant of an animal-drawn vehicle,,,,
+PF60,"Land transport injury event of undetermined intent, unknown whether road traffic or off-road nontraffic injuring a pedestrian",,,,
+PF61,"Land transport injury event of undetermined intent, unknown whether road traffic or off-road nontraffic injuring the user of a pedestrian conveyance",,,,
+PF62,"Land transport injury event of undetermined intent, unknown whether road traffic or off-road nontraffic injuring a pedal cyclist",,,,
+PF63,"Land transport injury event of undetermined intent, unknown whether road traffic or off-road nontraffic injuring a motor cyclist",,,,
+PF64,"Land transport injury event of undetermined intent, unknown whether road traffic or off-road nontraffic injuring a car occupant",,,,
+PF65,"Land transport injury event of undetermined intent, unknown whether road traffic or off-road nontraffic injuring a bus or coach occupant",,,,
+PF66,"Land transport injury event of undetermined intent, unknown whether road traffic or off-road nontraffic injuring an occupant of light goods vehicle",,,,
+PF67,"Land transport injury event of undetermined intent, unknown whether road traffic or off-road nontraffic injuring an occupant of heavy goods vehicle",,,,
+PF68,"Land transport injury event of undetermined intent, unknown whether road traffic or off-road nontraffic injuring an occupant of a streetcar or tram",,,,
+PF69,"Land transport injury event of undetermined intent, unknown whether road traffic or off-road nontraffic injuring an occupant of a low powered passenger vehicle",,,,
+PF6A,"Land transport injury event of undetermined intent, unknown whether road traffic or off-road nontraffic injuring a user of a special vehicle mainly used in agriculture",,,,
+PF6B,"Land transport injury event of undetermined intent, unknown whether road traffic or off-road nontraffic injuring a user of a special vehicle mainly used on industrial premises",,,,
+PF6C,"Land transport injury event of undetermined intent, unknown whether road traffic or off-road nontraffic injuring a user of a special construction vehicle",,,,
+PF6D,"Land transport injury event of undetermined intent, unknown whether road traffic or off-road nontraffic injuring a user of an all-terrain vehicle",,,,
+PF6E,"Land transport injury event of undetermined intent, unknown whether road traffic or off-road nontraffic injuring a rider of an animal",,,,
+PF6F,"Land transport injury event of undetermined intent, unknown whether road traffic or off-road nontraffic injuring an occupant of an animal-drawn vehicle",,,,
+PF70,Railway transport injury event of undetermined intent with collision or derailment,,,,
+PF71,Railway transport injury event of undetermined intent without collision or derailment,,,,
+PF80,"Water transport injury event of undetermined intent with water vessel damaged, disabled or destroyed causing submersion or drowning",,,,
+PF90,"Water transport injury event of undetermined intent with water vessel not damaged, disabled or destroyed causing submersion or drowning",,,,
+PG20,"Air or space transport injury event of undetermined intent with aircraft or spacecraft damaged, disabled or destroyed",,,,
+PG21,"Air or space transport injury event of undetermined intent with aircraft or spacecraft not damaged, disabled or destroyed",,,,
+PG50,Fall or jump of undetermined intent on the same level or from less than 1 metre,,,,
+PG51,Fall or jump of undetermined intent from a height of 1 metre or more,,,,
+PG60,"Struck, kicked, or bumped with undetermined intent by person",,,,
+PG61,"Struck, kicked, or bumped with undetermined intent by animal",,,,
+PG62,Stepped on or crushed with undetermined intent by person,,,,
+PG63,Stepped on or crushed with undetermined intent by animal,,,,
+PG64,Bitten with undetermined intent by person,,,,
+PG65,Bitten with undetermined intent by animal,,,,
+PG66,Scratched or clawed with undetermined intent by person,,,,
+PG67,Scratched or clawed with undetermined intent by animal,,,,
+PG68,Stung or envenomated with undetermined intent by animal,,,,
+PG69,Contact with plant of undetermined intent,,,,
+PG70,Struck by projectile from handgun of undetermined intent,,,,
+PG71,"Struck by projectile from rifle, shotgun or larger firearm of undetermined intent",,,,
+PG80,"Struck by moving object, not elsewhere classified of undetermined intent",,,,
+PG81,Striking against stationary object of undetermined intent,,,,
+PG90,"Cut or pierced by knife, sword or dagger of undetermined intent",,,,
+PG91,Cut or pierced by sharp glass of undetermined intent,,,,
+PH00,Struck by blunt object with undetermined intent,,,,
+PH01,"Caught, crushed, jammed or pinched between objects with undetermined intent",,,,
+PH10,Drowning or submersion while in body of water with undetermined intent,,,,
+PH11,Drowning or submersion following fall into body of water with undetermined intent,,,,
+PH12,Injury other than drowning while in body of water with undetermined intent,,,,
+PH13,Injury other than drowning following fall into body of water with undetermined intent,,,,
+PH20,Threat to breathing by suffocation from object covering mouth or nose with undetermined intent,,,,
+PH21,Threat to breathing by hanging with undetermined intent,,,,
+PH22,Threat to breathing by strangulation with undetermined intent,,,,
+PH23,Threat to breathing by external compression of airways or chest with undetermined intent,,,,Threat to breathing by hanging with undetermined intent; Threat to breathing by strangulation with undetermined intent
+PH24,Threat to breathing by inhalation or ingestion of liquids with undetermined intent,,,,
+PH25,Threat to breathing by inhalation or ingestion of food with undetermined intent,,,,
+PH26,Threat to breathing by inhalation or ingestion of other objects or materials with undetermined intent,,,,
+PH27,Threat to breathing by low oxygen environment with undetermined intent,,,,
+PH30,Exposure to uncontrolled fire with undetermined intent,,,,
+PH31,Exposure to controlled fire with undetermined intent,,,,
+PH32,Exposure to ignition or melting of materials with undetermined intent,,,,
+PH33,Contact with hot object or liquid with undetermined intent,,,,
+PH34,"Contact with steam, hot vapour, air or gases with undetermined intent",,,,
+PH35,Exposure to excessive heat with undetermined intent,,,,
+PH36,Exposure to excessive cold with undetermined intent,,,,
+PH40,Exposure to or harmful effects of undetermined intent of opioids or related analgesics,,,,
+PH41,Exposure to or harmful effects of undetermined intent of sedative hypnotic drugs or other CNS depressants,,,,
+PH42,Exposure to or harmful effects of undetermined intent of psychostimulants,,,,
+PH43,Exposure to or harmful effects of undetermined intent of cannabinoids or hallucinogens,,,,
+PH44,"Exposure to or harmful effects of undetermined intent of analgesics, antipyretics or nonsteroidal anti-inflammatory drugs",,,,
+PH45,Exposure to or harmful effects of undetermined intent of antidepressants,,,,
+PH46,Exposure to or harmful effects of undetermined intent of antipsychotics,,,,
+PH47,Exposure to or harmful effects of undetermined intent of antiepileptics or antiparkinsonism drugs,,,,
+PH47.0,"Exposure to or harmful effects of undetermined intent of mixed antiepileptics, not elsewhere classified",,,,
+PH48,"Exposure to or harmful effects of undetermined intent of other or unspecified drugs, medicaments or biological substances",,,,
+PH49,"Exposure to or harmful effects of undetermined intent of multiple drugs, medicaments or biological substances",,,,
+PH50,Exposure to or harmful effects of undetermined intent of alcohols,,,,
+PH51,Exposure to or harmful effects of undetermined intent of organic solvents,,,,
+PH52,Exposure to or harmful effects of undetermined intent of carbon monoxide,,,,
+PH53,Exposure to or harmful effects of undetermined intent of pesticides,,,,
+PH54,Exposure to or harmful effects of undetermined intent of corrosive substances,,,,
+PH55,Exposure to or harmful effects of undetermined intent of halogen derivatives of aliphatic or aromatic hydrocarbons,,,,
+PH56,Exposure to or harmful effects of undetermined intent of other or unspecified substances chiefly nonmedicinal as to source,,,,
+PH70,Exposure to foreign body in orifice or eye with undetermined intent,,,,
+PH71,Exposure to electric current with undetermined intent,,,,
+PH72,Exposure to sunlight with undetermined intent,,,,
+PH73,Exposure to radiation with undetermined intent,,,,
+PH74,Exposure to high or low air pressure or changes in air pressure with undetermined intent,,,,
+PH75,Exposure to explosion with undetermined intent,,,,
+PH75.0,Exposure to chemical explosion with undetermined intent,,,,
+PH75.1,Exposure to explosion or rupture of pressurised materials or object with undetermined intent,,,,
+PH76,Physical overexertion with undetermined intent,,,,
+PH77,Lack of food with undetermined intent,,,,
+PH78,Lack of water with undetermined intent,,,,
+PH79,Other specified privation with undetermined intent,,,,
+PH7A,Abandonment with undetermined intent,,,,
+PH7B,Neglect with undetermined intent,,,,
+PJ00,Victim of lightning,,,,
+PJ01,Victim of earthquake,,,,
+PJ03,Victim of tsunami,,,,
+PJ04,Victim of volcanic eruption,,,,
+PJ05,"Victim of avalanche, landslide or other earth movements",,,,
+PJ06,Victim of cataclysmic storm,,,,
+PJ07,Victim of flood,,,,
+PJ20,Physical maltreatment,,"Non-accidental acts of physical force that result, or have reasonable potential to result, in physical harm or that evoke significant fear. The category is applied to the victim of the maltreatment, not the perpetrator.",,
+PJ21,Sexual maltreatment,,"In adults, forced or coerced sexual acts or sexual acts with someone who is unable to consent; in children, sexual acts involving a child that are intended to provide sexual gratification to an adult. The category is applied to the victim of the maltreatment, not the perpetrator.",,
+PJ22,Psychological maltreatment,,"Non-accidental verbal or symbolic acts that result in significant psychological harm. The category is applied to the victim of the maltreatment, not the perpetrator.",,
+PJ40,Legal intervention involving projectile from firearm,,,Legal intervention involving rifle pellet or rubber bullet,
+PJ41,Legal intervention involving other projectile,,,,
+PJ42,Legal intervention involving blunt object,,,"Hit, struck by blunt object during legal intervention",
+PJ43,Legal intervention involving sharp object,,,Cut during legal intervention,
+PJ44,Legal intervention involving electric weapon,,,,
+PJ45,Legal intervention involving explosive,,,,
+PJ46,Legal intervention involving gas,,,,
+PJ47,Legal intervention involving application of physical force,,,,
+PJ60,Explosion of depth-charge or marine mine during armed conflict,,,,
+PJ61,Explosion of torpedo during armed conflict,,,,
+PJ62,Explosion of sea-based artillery shell during armed conflict,,,,
+PJ70,Attack on or destruction of aircraft during armed conflict due to enemy fire or explosives,,,,
+PJ71,Attack on or destruction of aircraft during armed conflict due to collision with other aircraft,,,,
+PJ80,Explosion of missile during armed conflict,,,,
+PJ81,Explosion of aerial bomb during armed conflict,,,,
+PJ82,Explosion of munitions or weapons during armed conflict,,,,
+PJ83,Explosion of improvised explosive device during armed conflict,,,,
+PJ90,Use of gasoline bomb during armed conflict,,,,
+PJ91,Use of flamethrower during armed conflict,,,,
+PJ92,Use of incendiary bullets during armed conflict,,,,
+PK00,Use of rubber bullets during armed conflict,,,,
+PK01,Use of firearm pellets during armed conflict,,,,
+PK02,Other firearms discharge during armed conflict,,,,
+PK03,Other weapons use during armed conflict,,,,
+PK04,Unarmed combat during armed conflict,,,,
+PK10,Thermal or blast effects of nuclear weapon during armed conflict,,,,
+PK11,Nuclear radiation effects of nuclear weapon during armed conflict,,,,
+PK20,Use of weaponised micro-organisms during armed conflict,,,,
+PK30,Use of chemical weapons during armed conflict,,,,
+PK31,Use of lasers or other energetic beams or fields during armed conflict,,,,
+PK32,Use of electric weapons during armed conflict,,,,
+PK33,Use of autonomous or semi-autonomous machines as weapons during armed conflict,,,,
+PK40,Explosion of mine after cessation of armed conflict,,,,
+PK41,Explosion of bomb after cessation of armed conflict,,,,
+PK80,Medical or surgical procedure associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.0,Neurological procedure associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.00,"Neurological procedure associated with injury or harm, open approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.01,"Neurological procedure associated with injury or harm, percutaneous approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.02,"Neurological procedure associated with injury or harm, endoscopic approach",,,,
+PK80.1,Cardiac procedure associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.10,"Cardiac procedure for repair of congenital anomaly associated with injury or harm, open approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.11,"Cardiac procedure for repair of congenital anomaly associated with injury or harm, percutaneous approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.12,"Cardiac procedure for repair of congenital anomaly associated with injury or harm, endoscopic approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.13,"Cardiac procedure for repair of congenital anomaly associated with injury or harm, unspecified approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.14,"Other cardiac procedure associated with injury or harm, open approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.15,"Other cardiac procedure associated with injury or harm, percutaneous approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.16,"Other cardiac procedure associated with injury or harm, endoscopic approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.17,"Other cardiac procedure associated with injury or harm, unspecified approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.2,Thoracic procedure associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm; Cardiac procedure associated with injury or harm in therapeutic use"
+PK80.20,"Thoracic procedure associated with injury or harm, open approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.21,"Thoracic procedure associated with injury or harm, percutaneous approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.22,"Thoracic procedure associated with injury or harm, endoscopic approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.3,"Gastrointestinal, abdominal, or abdominal wall procedure associated with injury or harm in therapeutic use",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.30,"Gastrointestinal, abdominal, or abdominal wall procedure associated with injury or harm, open approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.31,"Gastrointestinal, abdominal, or abdominal wall procedure associated with injury or harm, percutaneous approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.32,"Gastrointestinal, abdominal, or abdominal wall procedure associated with injury or harm, per orifice endoscopic approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.33,"Gastrointestinal, abdominal, or abdominal wall procedure associated with injury or harm, percutaneous endoscopic approach",,,,
+PK80.4,Endocrine procedure associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.40,"Endocrine procedure associated with injury or harm, open approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.41,"Endocrine procedure associated with injury or harm, percutaneous approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.42,"Endocrine procedure associated with injury or harm, endoscopic approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.5,Gynaecological or breast procedure associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm; Procedures related to abortion"
+PK80.50,"Gynaecological or breast procedure associated with injury or harm, open approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.51,"Gynaecological or breast procedure associated with injury or harm, percutaneous approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.52,"Gynaecological or breast procedure associated with injury or harm, endoscopic approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.53,"Gynaecological or breast procedure associated with injury or harm in therapeutic use, per orifice approach",,,,
+PK80.6,Urological procedure associated with injury or harm in therapeutic use,,,,
+PK80.60,"Urological procedure associated with injury or harm, open approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.61,"Urological procedure associated with injury or harm, percutaneous approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.62,"Urological procedure associated with injury or harm, endoscopic approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.7,Obstetric procedure associated with injury or harm in therapeutic use,,"Surgical procedure on the pregnant woman for conditions associated with pregnancy, labour, or the puerperium",,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.70,"Caesarean section or other obstetric procedure associated with injury or harm, open approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.71,"Obstetric procedure associated with injury or harm, percutaneous approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.72,"Obstetric procedure associated with injury or harm, endoscopic approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.73,"Obstetric procedure associated with injury or harm in therapeutic use, per orifice approach",,,,
+PK80.8,Musculoskeletal procedure associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.80,"Musculoskeletal procedure associated with injury or harm, open approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.81,"Musculoskeletal procedure associated with injury or harm, percutaneous approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.82,"Musculoskeletal procedure associated with injury or harm, endoscopic approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.9,Vascular procedure associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.90,"Vascular procedure associated with injury or harm, open approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.91,"Vascular procedure associated with injury or harm, percutaneous approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.92,"Vascular procedure associated with injury or harm, endoscopic approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.A,"Ear, nose, oral, or throat procedure associated with injury or harm in therapeutic use",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.A0,"Ear, nose, oral, or throat procedure associated with injury or harm, open approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.A1,"Ear, nose, oral, or throat procedure associated with injury or harm, percutaneous approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.A2,"Ear, nose, oral, or throat procedure associated with injury or harm, endoscopic approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.B,Dental procedure associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.B0,"Dental procedure associated with injury or harm, open approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.B1,"Dental procedure associated with injury or harm, percutaneous approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.B2,"Dental procedure associated with injury or harm, endoscopic approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.C,Skin or integument procedure associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.C0,"Skin or integument procedure associated with injury or harm, open approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.C1,"Skin or integument procedure associated with injury or harm, percutaneous approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.C2,"Skin or integument procedure associated with injury or harm, endoscopic approach",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK80.D,Ophthalmic procedure associated with injury or harm in therapeutic use,,,,
+PK81,Certain medical procedures associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK81.0,Ventilation associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK81.1,Extracorporeal life support procedure associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK81.2,Aspiration or drainage of body cavity or fluid collection associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK81.3,Acupuncture or related therapies associated with injury or harm in therapeutic use,,Injury or harm associated with insertion of needles into certain points of the body for treatment.,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK81.30,Acupuncture cupping associated with injury or harm in therapeutic use,,,,
+PK81.4,Bone marrow aspiration or biopsy associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK81.5,"Biopsy procedure, not elsewhere classified, associated with injury or harm in therapeutic use",,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm; Bone marrow aspiration or biopsy associated with injury or harm in therapeutic use"
+PK81.6,Dialysis associated with injury or harm in therapeutic use,,"Replacing kidney function, a procedure to filter blood, including haemodialysis and peritoneal dialysis.",,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK81.7,Injection or infusion for therapeutic or diagnostic purposes associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK81.8,Insertion of tube associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK81.9,Joint aspiration associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK81.A,Lumbar puncture associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK81.B,Manipulative therapies associated with injury or harm in therapeutic use,,Manipulation and/or movement of one or more parts of the human body for correction and treatment.,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK81.C,Radiation therapy associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK81.D,Other specified medical procedure associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK81.E,Cardiopulmonary resuscitation associated with injury or harm in therapeutic use,,,,"Circumstances associated with a surgical or other medical procedure influencing the episode of care, without injury or harm"
+PK81.F,Needle stick associated with injury or harm in therapeutic use,,,,
+PK90,Anaesthesiology devices associated with injury or harm,,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK90.0,"Anaesthesiology devices associated with injury or harm, diagnostic or monitoring devices",,An anaesthesiology device was involved in an incident that occurred in a diagnostic or monitoring task,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK90.1,"Anaesthesiology devices associated with injury or harm, therapeutic, nonsurgical or rehabilitative devices",,An anaesthesiology device was involved in an adverse incident that occurred in a therapeutic (nonsurgical) and rehabilitative task,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK90.2,"Anaesthesiology devices associated with injury or harm, prosthetic or other implants, materials or accessory devices",,"Anaesthesiology related prosthetic and other implants, materials and accessory devices were involved in an adverse related incident",,
+PK90.3,"Anaesthesiology devices associated with injury or harm, surgical instruments, materials or devices",,Anaesthesiology related surgical instruments like materials and devices (including sutures) were involved in an adverse related incident,,
+PK90.4,"Anaesthesiology devices associated with injury or harm, miscellaneous devices, not elsewhere classified",,,,
+PK91,"Cardiovascular devices, implants or grafts associated with injury or harm",,,,
+PK91.0,"Cardiovascular devices associated with injury or harm, diagnostic or monitoring devices",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK91.1,"Cardiovascular devices associated with injury or harm, therapeutic, nonsurgical or rehabilitative devices",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK91.10,"Cardiovascular devices associated with injury or harm, pacemaker",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm; Pacemaker or implantable cardioverter defibrillator battery at end of battery life
+PK91.11,"Cardiovascular devices associated with injury or harm, implantable defibrillator",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm; Pacemaker or implantable cardioverter defibrillator battery at end of battery life
+PK91.12,"Cardiovascular devices associated with injury or harm, left ventricular assist devices",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK91.13,"Cardiovascular devices associated with injury or harm, intra-aortic balloon pump",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK91.14,"Cardiovascular devices associated with injury or harm, IVC filter",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK91.15,"Cardiovascular devices associated with injury or harm, central venous catheter",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK91.16,Cardiovascular devices associated with injury or harm: peripheral venous catheter,,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK91.2,"Cardiovascular devices associated with injury or harm, prosthetic or other implants, materials or accessory devices",,"A cardiovascular prosthetic or other implant, or cardiovascular material or an accessory device was associated with an adverse incident",,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm; Ventricular assist devices
+PK91.20,"Cardiovascular devices associated with injury or harm, grafts",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK91.21,"Cardiovascular devices associated with injury or harm, stents",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK91.22,"Cardiovascular devices associated with injury or harm, mechanical or bioprosthetic valves",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK91.3,"Cardiovascular devices associated with injury or harm, surgical instruments, materials or devices",,"A cardiovascular surgical instrument, material or device (including sutures) was associated with an adverse incident",,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK91.4,"Cardiovascular devices associated with injury or harm, miscellaneous devices, not elsewhere classified",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK92,"Otorhinolaryngological devices, implants or grafts associated with injury or harm",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK92.0,"Otorhinolaryngological devices associated with injury or harm, diagnostic or monitoring devices",,An otorhinolaryngological device was involved in an incident that occurred in a diagnostic or monitoring task,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK92.1,"Otorhinolaryngological devices associated with injury or harm, therapeutic, nonsurgical or rehabilitative devices",,An otorhinolaryngological device was involved in an adverse incident that occurred in a therapeutic (nonsurgical) and rehabilitative task,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK92.2,"Otorhinolaryngological devices associated with injury or harm, prosthetic or other implants, materials or accessory devices",,"Otorhinolaryngological related prosthetic and other implants, materials and accessory devices were involved in an adverse related incident",,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK92.3,"Otorhinolaryngological devices associated with injury or harm, surgical instruments, materials or devices",,Otorhinolaryngological related surgical instruments like materials and devices (including sutures) were involved in an adverse related incident,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK92.4,"Otorhinolaryngological devices associated with injury or harm, miscellaneous devices, not elsewhere classified",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK93,"Gastroenterology or urology devices, implants or grafts associated with injury or harm",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK93.0,"Gastroenterology or urology devices associated with injury or harm, diagnostic or monitoring devices",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK93.1,"Gastroenterology or urology devices associated with injury or harm, therapeutic, nonsurgical or rehabilitative devices",,A gastroenterology or urology device was involved in an adverse incident that occurred in a therapeutic (nonsurgical) and rehabilitative task,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK93.10,"Gastroenterology or urology devices associated with injury or harm, urinary catheter",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK93.2,"Gastroenterology or urology devices associated with injury or harm, prosthetic or other implants, materials or accessory devices",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK93.3,"Gastroenterology or urology devices associated with injury or harm, surgical instruments, materials or devices",,Gastroenterology or urology related surgical instruments like materials and devices (including sutures) were involved in an adverse related incident,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK93.4,"Gastroenterology or urology devices associated with injury or harm, miscellaneous devices, not elsewhere classified",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK94,General hospital or personal use devices associated with injury or harm,,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK94.0,"General hospital or personal use devices associated with injury or harm, diagnostic or monitoring devices",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK94.1,"General hospital or personal use devices associated with injury or harm, therapeutic, nonsurgical or rehabilitative devices",,A general hospital and personal-use device was involved in an adverse incident that occurred in a therapeutic (nonsurgical) and rehabilitative task,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK94.2,"General hospital or personal use devices associated with injury or harm, prosthetic or other implants, materials or accessory devices",,"General hospital and personal-use related prosthetic and other implants, materials and accessory devices were involved in an adverse related incident",,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK94.3,"General hospital or personal use devices associated with injury or harm, surgical instruments, materials or devices",,General hospital and personal-use related surgical instruments like materials and devices (including sutures) were involved in an adverse related incident,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK94.4,"General hospital or personal use devices associated with injury or harm, miscellaneous devices, not elsewhere classified",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK95,"Neurological devices, implants or grafts associated with injury or harm",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK95.0,"Neurological devices associated with injury or harm, diagnostic or monitoring devices",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK95.1,"Neurological devices associated with injury or harm, therapeutic, nonsurgical or rehabilitative devices",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK95.2,"Neurological devices associated with injury or harm, prosthetic or other implants, materials or accessory devices",,"Neurological related prosthetic and other implants, materials and accessory devices were involved in an adverse related incident",,
+PK95.20,"Neurological devices associated with injury or harm, ventricular shunt",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK95.3,"Neurological devices associated with injury or harm, surgical instruments, materials or devices",,Neurological related surgical instruments like materials and devices (including sutures) were involved in an adverse related incident,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK95.4,"Neurological devices associated with injury or harm, miscellaneous devices, not elsewhere classified",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK96,"Obstetric or gynaecological devices, implants or grafts associated with injury or harm",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK96.0,"Obstetric or gynaecological devices associated with injury or harm, diagnostic or monitoring devices",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK96.1,"Obstetric or gynaecological devices associated with injury or harm, therapeutic, nonsurgical or rehabilitative devices",,An obstetric or gynaecological device was involved in an adverse incident that occurred in a therapeutic (nonsurgical) and rehabilitative task,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK96.2,"Obstetric or gynaecological devices associated with injury or harm, prosthetic or other implants, materials or accessory devices",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK96.3,"Obstetric or gynaecological devices associated with injury or harm, surgical instruments, materials or devices",,Obstetric or gynaecological related surgical instruments like materials and devices (including sutures) were involved in an adverse related incident,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK96.4,"Obstetric or gynaecological devices associated with injury or harm, miscellaneous devices, not elsewhere classified",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK97,"Ophthalmic devices, implants or grafts associated with injury or harm",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK97.0,"Ophthalmic devices associated with injury or harm, diagnostic or monitoring devices",,An ophthalmic device was involved in an incident that occurred in a diagnostic or monitoring task,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK97.1,"Ophthalmic devices associated with injury or harm, therapeutic, nonsurgical or rehabilitative devices",,An ophthalmic device was involved in an adverse incident that occurred in a therapeutic (nonsurgical) and rehabilitative task,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK97.2,"Ophthalmic devices associated with injury or harm, prosthetic or other implants, materials or accessory devices",,"Ophthalmic related prosthetic and other implants, materials and accessory devices were involved in an adverse related incident",,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK97.3,"Ophthalmic devices associated with injury or harm, surgical instruments, materials or devices",,Ophthalmic related surgical instruments like materials and devices (including sutures) were involved in an adverse related incident,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK97.4,"Ophthalmic devices associated with injury or harm, miscellaneous devices, not elsewhere classified",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK98,Radiological devices associated with injury or harm,,,,
+PK98.0,"Radiological devices associated with injury or harm, diagnostic or monitoring devices",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK98.1,"Radiological devices associated with injury or harm, therapeutic, nonsurgical or rehabilitative devices",,A radiological device was involved in an adverse incident that occurred in a therapeutic (nonsurgical) and rehabilitative task,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK98.2,"Radiological devices associated with injury or harm, prosthetic or other implants, materials or accessory devices",,"Radiological related prosthetic and other implants, materials and accessory devices were involved in an adverse related incident",,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK98.3,"Radiological devices associated with injury or harm, surgical instruments, materials or devices",,Radiological related surgical instruments like materials and devices (including sutures) were involved in an adverse related incident,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK98.4,"Radiological devices associated with injury or harm, miscellaneous devices, not elsewhere classified",,,,
+PK99,"Orthopaedic devices, implants or grafts associated with injury or harm",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK99.0,"Orthopaedic devices associated with injury or harm, diagnostic or monitoring devices",,An orthopaedic device was involved in an incident that occurred in a diagnostic or monitoring task,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK99.1,"Orthopaedic devices associated with injury or harm, therapeutic, nonsurgical or rehabilitative devices",,An orthopaedic device was involved in an adverse incident that occurred in a therapeutic (nonsurgical) and rehabilitative task,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK99.2,"Orthopaedic devices associated with injury or harm, prosthetic or other implants, materials or accessory devices",,"Orthopaedic related prosthetic and other implants, materials and accessory devices were involved in an adverse related incident",,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm; Wear of articular bearing surface of joint prosthesis
+PK99.3,"Orthopaedic devices associated with injury or harm, surgical instruments, materials or devices",,Orthopaedic related surgical instruments like materials and devices (including sutures) were involved in an adverse related incident,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK99.4,"Orthopaedic devices associated with injury or harm, miscellaneous devices, not elsewhere classified",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK9A,Physical medicine devices associated with injury or harm,,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK9A.0,"Physical medicine devices associated with injury or harm, diagnostic or monitoring devices",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK9A.1,"Physical medicine devices associated with injury or harm, therapeutic, nonsurgical or rehabilitative devices",,A physical medicine device was involved in an adverse incident that occurred in a therapeutic (nonsurgical) and rehabilitative task,,
+PK9A.2,"Physical medicine devices associated with injury or harm, prosthetic or other implants, materials or accessory devices",,"Physical medicine related prosthetic and other implants, materials and accessory devices were involved in an adverse related incident (e.g., infection following use of unclean acupuncture needles)",,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK9A.20,Communication system devices associated with adverse incidents,,,,
+PK9A.21,Communication system devices associated with adverse incidents in a physical medicine care environment,,,,
+PK9A.22,Environmental control system devices associated with adverse incidents,,,,
+PK9A.23,Mobility aids associated with adverse incidents,,,,
+PK9A.24,Orthotic devices associated with adverse incidents,,,,
+PK9A.3,"Physical medicine devices associated with injury or harm, surgical instruments, materials or devices",,Physical medicine related surgical instruments like materials and devices (including sutures) were involved in an adverse related incident.,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK9A.4,"Physical medicine devices associated with injury or harm, miscellaneous devices, not elsewhere classified",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK9B,"General or plastic surgery devices, implants or grafts associated with injury or harm",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK9B.0,"General or plastic surgery devices associated with injury or harm, diagnostic or monitoring devices",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK9B.1,"General or plastic surgery devices associated with injury or harm, therapeutic, nonsurgical or rehabilitative devices",,A general- or plastic-surgery device was involved in an adverse incident that occurred in a therapeutic (nonsurgical) and rehabilitative task,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK9B.2,"General or plastic surgery devices associated with injury or harm, prosthetic or other implants, materials or accessory devices",,"General- or plastic-surgery related prosthetic and other implants, materials and accessory devices were involved in an adverse related incident",,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK9B.3,"General or plastic surgery devices associated with injury or harm, surgical instruments, materials or devices",,General- or plastic-surgery related surgical instruments like materials and devices (including sutures) were involved in an adverse related incident,,
+PK9B.4,"General or plastic surgery devices associated with injury or harm, miscellaneous devices, not elsewhere classified",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK9C,"Other or unspecified medical devices, implants or grafts associated with injury or harm",,,,
+PK9C.0,"Other or unspecified medical devices associated with injury or harm, diagnostic or monitoring devices",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK9C.1,"Other or unspecified medical devices associated with injury or harm, therapeutic, nonsurgical or rehabilitative devices",,An other or unspecified medical device was involved in an adverse incident that occurred in a therapeutic (nonsurgical) and rehabilitative task,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK9C.2,"Other or unspecified medical devices associated with injury or harm, prosthetic or other implants, materials or accessory devices",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK9C.3,"Other or unspecified medical devices associated with injury or harm, surgical instruments, materials or devices",,Other or unspecified medical related surgical instruments like materials and devices (including sutures) were involved in an adverse related incident,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PK9C.30,"Mechanical complication of nonabsorbable surgical material, not otherwise specified",,,,
+PK9C.31,Mechanical complication of permanent sutures,,,,
+PK9C.4,"Other or unspecified medical devices associated with injury or harm, miscellaneous devices, not elsewhere classified",,,,Circumstances associated with a surgical or other medical device influencing the episode of care without injury or harm
+PL00,"Drugs, medicaments or biological substances associated with injury or harm in therapeutic use",,,,"Circumstances associated with exposure to a drug, medicament or biological substance influencing the episode of care without injury or harm"
+PL01,Complementary or traditional medicines associated with injury or harm in therapeutic use,,,,
+PL01.0,"Complementary or traditional medicines associated with injury or harm in therapeutic use, Herbal Preparations or Formulas",,,,
+PL01.1,"Complementary or traditional medicines associated with injury or harm in therapeutic use, Dietary Supplements, Vitamins or Minerals",,,,
+PL01.2,"Complementary or traditional medicines associated with injury or harm in therapeutic use, Complementary or Traditional Medicines, not elsewhere classified",,,,
+PL10,Other health care related causes of injury or harm,,,,
+PL11,Mode of injury or harm associated with a surgical or other medical procedure,,,,"Mode of injury or harm associated with exposure to a drug, medicament or biological substance"
+PL11.0,"Cut, puncture or tear, as mode of injury or harm",,"The cut or puncture occurs when a solid organ or blood vessel or nerve is unintentionally lacerated or otherwise damaged during a surgical or medical procedure. The cut or puncture must not be required for the successful completion of the procedure. A perforation occurs when a hollow viscous, such as the bowel or urinary bladder, is injured during a surgical procedure such that the contents of the viscous leak into the surrounding tissues or space.",,
+PL11.1,"Burn arising during procedure, as mode of injury or harm",,"A burn occurs when tissue is damaged by heat, electricity or fire. It can occur, for example, as the direct result of cautery equipment, warming efforts, or because of a fire.",,Burn from ionising radiation
+PL11.2,"Embolisation, as mode of injury or harm",,An embolisation occurs when a solid object within the venous or arterial circulation propagates to a distal location and becomes lodged there.,,"Obstruction of device, as mode of injury or harm; Embolisation without injury or harm"
+PL11.20,"Air embolism, as mode of injury",,,,
+PL11.3,"Foreign body accidentally left in body, as mode of injury or harm",,"A foreign body is any solid material not normally found in the human body. It is accidentally left in the body if there was no specific intention to keep it in the body, either because it was indicated for medical purposes or because it was unsafe to retrieve.",,Foreign body accidentally left in body without injury or harm
+PL11.4,"Failure of sterile precautions, as mode of injury or harm",,An infection occurred because standard procedures designed to minimize the risk of hospital acquired infection were not followed or were insufficient.,,Failure of sterile precautions without injury or harm
+PL11.5,"Procedure undertaken at wrong site or wrong side, as mode of injury or harm",,,,Patient received diagnostic test or treatment intended for another patient
+PL11.6,"Pressure, as mode of injury or harm",,"Includes factors such as: body positioning, retractors, or other instruments causing tissue damage through direct pressure",,Pressure as potential mode of injury without injury or harm
+PL12,"Mode of injury or harm associated with a surgical or other medical device, implant or graft",,,,
+PL12.0,"Structural device failure, as mode of injury or harm",,Harm arising due to mechanical or material device failure not related to the installation of the device.,"Leakage from device, as mode of injury or harm; Wear, breakage or breakdown of device, as mode of injury or harm; Breakdown of intraocular lens","Wear of articular bearing surface of joint prosthesis; Combination or interaction of operator error and device failure, as mode of injury or harm; Structural device failure without injury or harm"
+PL12.1,"Functional device failure, as mode of injury or harm",,,,"Pacemaker or implantable cardioverter defibrillator battery at end of battery life; Pacemaker or implantable cardioverter defibrillator dysfunction; Combination or interaction of operator error and device failure, as mode of injury or harm; Functional device failure without injury or harm"
+PL12.2,"Perforation or protrusion by device, as mode of injury or harm",,,Ocular Implant Extrusion; Ocular Implant Exposure,"Cut, puncture or tear, as mode of injury or harm"
+PL12.3,"Obstruction of device, as mode of injury or harm",,"Obstruction associated with prosthetic devices, grafts or implants",,Obstruction of device without injury or harm
+PL12.4,"Dislodgement, misconnection or de-attachment, as mode of injury or harm",,Harm arising from loss of connection of device,"Malposition of device, as mode of injury or harm; Displacement of intraocular lens","Wear of articular bearing surface of joint prosthesis; Pacemaker or implantable cardioverter defibrillator lead complication; Dislodgement, misconnection or de-attachment of a surgical or medical device without injury or harm"
+PL12.5,"Operator error, as mode of injury or harm",,Harm arising due to process or procedural issues associated with the use and/or maintenance of a device not related to device failure.,,"Combination or interaction of operator error and device failure, as mode of injury or harm; Operator error without injury or harm"
+PL12.6,"Combination or interaction of operator error and device failure, as mode of injury or harm",,Harm arising due to a combination of device failure and process/procedural error in device use or maintenance.,,"Operator error, as mode of injury or harm; Structural device failure, as mode of injury or harm; Functional device failure, as mode of injury or harm; Combination or interaction of operator error and device failure without injury or harm"
+PL13,"Mode of injury or harm associated with exposure to a drug, medicament or biological substance",,,,
+PL13.0,"Overdose of substance, as mode of injury or harm",,"Incorrect dose (too high) administered by healthcare system, self or delivery unspecified",medication error leading to excess level or effect of prescribed drug; overdose of prescribed drug,"Overdose of substance without injury or harm; Unintentional exposure to or harmful effects of drugs, medicaments or biological substances; Intentional self-harm by exposure to or harmful effects of drugs, medicaments or biological substances; Assault by exposure to or harmful effects of drugs, medicaments or biological substances; Exposure to or harmful effects of undetermined intent of drugs, medicaments or biological substances"
+PL13.1,"Underdosing, as mode of injury or harm",,"Incorrect dose (too low) administered by healthcare system, self or delivery unspecified.",,
+PL13.2,"Drug-related injury or harm in the context of correct administration or dosage, as mode of injury or harm",,,,
+PL13.3,"Incorrect substance, as mode of injury or harm",,"Incorrect medication administered by healthcare system, self or delivery unspecified",,
+PL13.5,"Incorrect administration of drug or medicament, as mode of injury",,,,"Overdose of substance, as mode of injury or harm"
+PL13.50,"Incorrect route of drug or medicament, as mode of injury",,,,"Overdose of substance, as mode of injury or harm"
+PL13.51,"Incorrect rate of drug or medicament, as mode of injury",,,,"Overdose of substance, as mode of injury or harm"
+PL13.52,"Incorrect timing of drug or medicament, as mode of injury",,,,"Problem with delayed treatment; Overdose of substance, as mode of injury or harm"
+PL13.53,"Incorrect duration of drug or medicament, as mode of injury",,,,"Overdose of substance, as mode of injury or harm; Underdosing, as mode of injury or harm"
+PL13.6,"Medication or substance that is known to be an allergen, as mode of injury or harm",,,,
+PL13.7,"Medication or substance that is known to be contraindicated for the patient, as mode of injury or harm",,,,"Medication or substance that is known to be an allergen, as mode of injury or harm"
+PL13.8,"Expired or deteriorated medication or substance, as mode of injury or harm",,,,
+PL13.9,"Drug or substance interactions, as mode of injury or harm",,Medication or substance that is known to interact with another medication or substance that the patient is taking or is expected to take. Code also all involved substances.,,
+PL13.A,"Inappropriate stoppage or discontinuation of drug, as mode of injury or harm",,,,
+PL14,Mode of injury or harm associated with other health care related causes,,,,"Mode of injury or harm associated with a surgical or other medical procedure; Mode of injury or harm associated with exposure to a drug, medicament or biological substance; Mode of injury or harm associated with a surgical or other medical device, implant or graft"
+PL14.0,Non-administration of necessary drug,,,,"Underdosing, as mode of injury or harm"
+PL14.1,Non provision of necessary procedure,,,,Delayed treatment
+PL14.2,Problem associated with physical transfer of patient,,,,
+PL14.3,Mismatched blood used in transfusion,,Mismatched blood was used in transfusion and led to injury.,,
+PL14.4,Other problem associated with transfusion,,,,
+PL14.5,Problem associated with physical restraints,,,,
+PL14.6,Problem associated with isolation protocol,,Isolation of patient for infection cause injury to occur,,
+PL14.7,Problem associated with clinical documentation,,Clinical documentation error or omission led to injury of patient,,
+PL14.8,Problem associated with clinical software,,,,
+PL14.9,Incorrect diagnosis,,,,
+PL14.A,Delayed diagnosis,,,,
+PL14.B,Delayed treatment,,,,"Non provision of necessary procedure; Incorrect timing of drug or medicament, as mode of injury"
+PL14.C,Patient received diagnostic test or treatment intended for another patient,,,,"Procedure undertaken at wrong site or wrong side, as mode of injury or harm"
+PL14.D,"Problem associated with transitions of care, hand offs, or handovers",,,,
+PL14.E,Fall in health care,,,,

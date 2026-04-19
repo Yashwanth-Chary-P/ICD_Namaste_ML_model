@@ -1,0 +1,150 @@
+import requests
+import csv
+import time
+
+CLIENT_ID = "28fdd4a3-ac84-49b1-be00-50b0cacf78f7_ce3e9537-57b3-40f6-a9e1-4b864d77aeaf"
+CLIENT_SECRET = "myBN0FCw/L6lIv78ziiNiGqBC3dvjdisnBap0WyUjBw="
+
+TOKEN_URL = "https://icdaccessmanagement.who.int/connect/token"
+BASE_URL = "https://id.who.int/icd/release/11/2026-01/mms"
+
+visited = set()
+token = None
+
+# =========================
+# TOKEN
+# =========================
+def get_token():
+    global token
+
+    data = {
+        "client_id": CLIENT_ID,
+        "client_secret": CLIENT_SECRET,
+        "scope": "icdapi_access",
+        "grant_type": "client_credentials"
+    }
+
+    r = requests.post(TOKEN_URL, data=data, timeout=10)
+    token = r.json()["access_token"]
+
+
+# =========================
+# FETCH
+# =========================
+def get_entity(entity_id):
+    global token
+
+    url = f"{BASE_URL}/{entity_id}"
+
+    for i in range(5):
+        try:
+            headers = {
+                "Authorization": f"Bearer {token}",
+                "API-Version": "v2",
+                "Accept-Language": "en"
+            }
+
+            r = requests.get(url, headers=headers, timeout=10)
+
+            if r.status_code == 401:
+                get_token()
+                continue
+
+            if r.status_code == 200:
+                return r.json()
+
+        except:
+            time.sleep(1)
+
+    return None
+
+
+# =========================
+# SAFE JOIN FUNCTION
+# =========================
+def safe_join(items):
+    return "; ".join([
+        i.get("label", {}).get("@value", "")
+        for i in items
+        if i.get("label")
+    ])
+
+
+# =========================
+# EXTRACT
+# =========================
+def extract(data):
+    code = data.get("code", "")
+    if not code:
+        return None
+
+    return {
+        "Code": code,
+        "title": data.get("title", {}).get("@value", ""),
+        "Fully Specified Name": data.get("fullySpecifiedName", {}).get("@value", ""),
+        "Description": data.get("definition", {}).get("@value", ""),
+        "Inclusions": safe_join(data.get("inclusion", [])),
+        "Exclusions": safe_join(data.get("exclusion", [])),
+        "Index Terms": safe_join(data.get("indexTerm", []))   # ✅ FULL COLUMN
+    }
+
+
+# =========================
+# DFS TRAVERSAL
+# =========================
+def dfs(entity_id, writer, file):
+    if entity_id in visited:
+        return
+
+    visited.add(entity_id)
+
+    data = get_entity(entity_id)
+
+    if data:
+        row = extract(data)
+
+        if row:
+            writer.writerow(row)
+            file.flush()
+            print("Saved:", row["Code"])
+
+        for child in data.get("child", []):
+            child_id = child.split("/")[-1]
+            dfs(child_id, writer, file)
+
+    time.sleep(0.1)
+
+
+# =========================
+# MAIN
+# =========================
+def run_chapter(chapter_id, filename):
+    global visited
+    visited = set()
+
+    with open(filename, "w", newline="", encoding="utf-8") as f:
+
+        writer = csv.DictWriter(f, fieldnames=[
+            "Code",
+            "title",
+            "Fully Specified Name",
+            "Description",
+            "Inclusions",
+            "Exclusions",
+            "Index Terms"   # ✅ FULL COLUMN INCLUDED
+        ])
+
+        writer.writeheader()
+
+        dfs(chapter_id, writer, f)
+
+    print(f"✅ Done: {filename}")
+
+
+# =========================
+# RUN
+# =========================
+if __name__ == "__main__":
+    get_token()
+
+    run_chapter(714000734, "chapter18.csv")
