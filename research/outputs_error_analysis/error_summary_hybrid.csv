@@ -1,0 +1,8 @@
+metric,value,model
+total_queries,237,HYBRID
+top1_correct,160,HYBRID
+top1_error,77,HYBRID
+top5_hit,178,HYBRID
+top5_miss,59,HYBRID
+rerank_fixed,0,HYBRID
+rerank_hurt,0,HYBRID

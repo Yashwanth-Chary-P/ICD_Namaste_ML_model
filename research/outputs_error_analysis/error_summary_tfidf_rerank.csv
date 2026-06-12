@@ -1,0 +1,8 @@
+metric,value,model
+total_queries,237,TFIDF+RERANK
+top1_correct,221,TFIDF+RERANK
+top1_error,16,TFIDF+RERANK
+top5_hit,237,TFIDF+RERANK
+top5_miss,0,TFIDF+RERANK
+rerank_fixed,0,TFIDF+RERANK
+rerank_hurt,0,TFIDF+RERANK

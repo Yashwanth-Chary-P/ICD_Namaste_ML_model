@@ -1,0 +1,200 @@
+query_sanskrit_term,num_unique_predictions,num_models,error_count
+(a) bhedaḥ,3,6,6
+(a) carmadala-kuṣṭhaḥ,3,6,6
+(a) vātaraktam,3,6,6
+(a) karṇa-pratināhaḥ,3,5,5
+(a) kṣavathuvegarodhaḥ,3,5,5
+(a) kaphaja-arśaḥ,3,4,4
+(a) raktaja-arśaḥ (a) ārdra-arśaḥ,3,4,4
+(a) galagrahaḥ,3,3,3
+(a) sarvasara mukharogaḥ,3,3,3
+(a) akālaśayanam,2,4,4
+(a) akṣipākaḥ,2,4,4
+(a) alāsaḥ,2,4,4
+(a) amlakaḥ,2,4,4
+(a) anuśayī,2,4,4
+(a) atyānandā,2,4,4
+(a) aṅgamardaḥ,2,4,4
+(a) bahalavartma,2,4,4
+(a) bāhuśoṣaḥ,2,4,4
+(a) carmakuṣṭhaḥ,2,4,4
+(a) dantaśaithilyam,2,4,4
+(a) divāsvapna-upadravaḥ,2,4,4
+(a) gambhīrā-dṛṣṭiḥ,2,4,4
+(a) halīmaka,2,4,4
+(a) hanubhedaḥ,2,4,4
+(a) hāridramehaḥ,2,4,4
+(a) jānuviśleṣaḥ,2,4,4
+(a) jāṅgalamāṃsātyupayogaḥ,2,4,4
+(a) kalāyakhañjaḥ,2,4,4
+(a) kaphapittajajvaraḥ,2,4,4
+(a) kapālavidradhiḥ,2,4,4
+(a) karālaḥ,2,4,4
+(a) lavaṇamehaḥ,2,4,4
+(a) nakulāndhyam,2,4,4
+(a) nyacchaḥ,2,4,4
+(a) nābhija-arśaḥ,2,4,4
+(a) nīlamehaḥ,2,4,4
+(a) pittajakarṇarogaḥ,2,4,4
+(a) piṣṭamehaḥ,2,4,4
+(a) sahaja-arśaḥ,2,4,4
+(a) sannipātajajvaraḥ,2,4,4
+(a) saṅkocaḥ,2,4,4
+(a) sidhmaḥ,2,4,4
+(a) sirāśukraḥ,2,4,4
+(a) staimityam,2,4,4
+(a) surāmehaḥ,2,4,4
+(a) trikagrahaḥ,2,4,4
+(a) upanāhaḥ,2,4,4
+(a) utpātaḥ,2,4,4
+(a) utsaṅginī,2,4,4
+(a) valmīkaḥ,2,4,4
+(a) varāhadaṃṣṭrakaḥ,2,4,4
+(a) vaṅkṣaṇānāhaḥ,2,4,4
+(a) vidārikā,2,4,4
+(a) vraṇa-upadravaḥ,2,4,4
+(a) vācālatā,2,4,4
+(a) vāmanatvam,2,4,4
+(a) vātaja-arśaḥ (a) śuṣka-arśaḥ,2,4,4
+(a) vātajakarṇarogaḥ (a) vātajakarṇaśūla,2,4,4
+(a) vātajapramehaḥ,2,4,4
+(a) vātaparyāyaḥ,2,4,4
+(a) āmaśophachedaḥ,2,4,4
+(a) śaityam,2,4,4
+(a) śanairmehaḥ,2,4,4
+(a) śramaḥ,2,4,4
+(a) śukrakṣayaḥ,2,4,4
+(a) śyāvapiṇḍikā,2,4,4
+(a) śākhāśrita-kāmalā,2,4,4
+(a) ūṣmādhikyam,2,4,4
+(a)pratamakaśvāsaḥ,2,4,4
+"(a) ahipūtanā, (a) ahipūtanakaḥ",2,3,3
+(a) amlādhyuṣitaḥ (a) amloṣita,2,3,3
+(a) annāvṛtavātaḥ,2,3,3
+(a) antarāyāmaḥ,2,3,3
+(a) asthikṣayaḥ,2,3,3
+(a) asthiprabhedaḥ,2,3,3
+(a) aśruvegarodhaḥ,2,3,3
+(a) aṇḍa-vṛddhiḥ,2,3,3
+(a) baddhagudodaraḥ,2,3,3
+(a) daṇḍakaḥ,2,3,3
+(a) daṇḍāpatānakaḥ,2,3,3
+(a) dhātugatakuṣṭhaḥ,2,3,3
+"(a) dhūmakaḥ, (a) dhūmodgāraḥ",2,3,3
+(a) dīptaḥ,2,3,3
+(a) ghrāṇapākaḥ (a) nāsāpākaḥ,2,3,3
+(a) hrasvakeśaḥ,2,3,3
+(a) hṛddravaḥ,2,3,3
+(a) jālagardabhaḥ,2,3,3
+(a) karṇārbudaḥ,2,3,3
+(a) kaṇḍūḥ,2,3,3
+(a) koṣṭhāśrita-kāmalā,2,3,3
+(a) kṛmigranthiḥ,2,3,3
+(a) lohitārma (a) kṣatārma,2,3,3
+(a) majjāparipākaḥ,2,3,3
+(a) malāvṛtavātaḥ,2,3,3
+(a) matsyakāyaḥ (a) mātsyasattvaṃ,2,3,3
+(a) māṃsakledaḥ,2,3,3
+(a) mūtrāvṛtavātaḥ,2,3,3
+(a) pittaja-aśmarī,2,3,3
+(a) pittāvṛtavyānavātaḥ,2,3,3
+(a) purīṣavegarodhaḥ,2,3,3
+(a) puṇḍarīkaḥ,2,3,3
+(a) pādabhraṃśaḥ,2,3,3
+(a) pūyaraktam (a) pūyaśoṇitam,2,3,3
+(a) sannipātōdaraḥ-udararogaḥ,2,3,3
+(a) sarvāṅgavātaḥ/(a) sarvāṅgarogaḥ,2,3,3
+(a) sirāgrahaḥ,2,3,3
+(a) svaraghnam,2,3,3
+(a) sānnipātajakarṇarogaḥ (a) sannipātika-karṇaśūlaḥ,2,3,3
+(a) sūtikārogaḥ,2,3,3
+(a) tandrā,2,3,3
+"(a) tālupākaḥ, (a) tāluśothaḥ",2,3,3
+(a) udāvartinī,2,3,3
+(a) vihāravaiṣamyam,2,3,3
+(a) vyavāyātiyogaḥ,2,3,3
+(a) vāminī,2,3,3
+(a) vātāṣṭhīlā,2,3,3
+(a) ārtavakṣayaḥ,2,3,3
+(a) śālidhānya-atiyogaḥ,2,3,3
+galavidradhiḥ,2,3,3
+(a) adhovātavegāvarodhaḥ,2,2,2
+(a) arasajñatā,2,2,2
+(a) carmakīlaḥ,2,2,2
+(a) majjāvṛddhiḥ,2,2,2
+(a) purīṣakṣayaḥ,2,2,2
+(a) pāṣāṇagardabhaḥ,2,2,2
+(a) pūyālasaḥ,2,2,2
+(a) yuvānapiḍakā,2,2,2
+(a) madaḥ,1,6,6
+(a) snāyukarogaḥ,1,4,4
+(a) svedavṛddhiḥ,1,4,4
+(a) asthiśoṣaḥ,1,2,2
+(a) brahmakāyaḥ (a) brāhmasattvaṃ,1,2,2
+(a) kaphavṛddhiḥ,1,2,2
+"(a) kālamehaḥ, (a) kṛṣṇamehaḥ",1,2,2
+(a) medovṛddhiḥ,1,2,2
+(a) pittavṛddhiḥ,1,2,2
+(a) pittāvṛta-samānavātaḥ,1,2,2
+(a) pāśavakāyaḥ (a) pāśavasattvaṃ,1,2,2
+(a) snāyvarma,1,2,2
+"(a) tālupiḍakā, (a) tālupiṭikā",1,2,2
+(a) unmādaḥ,1,2,2
+"(a) vātakhuḍḍatā, (a) vātakaṇṭakaḥ",1,2,2
+(a) adhruṣaḥ,1,1,1
+(a) alasaka,1,1,1
+(a) apacī,1,1,1
+(a) apatantrakaḥ,1,1,1
+(a) arbudaḥ,1,1,1
+(a) asādhya-ūrustambhaḥ,1,1,1
+(a) asṛgdaraḥ (a) Raktapradar,1,1,1
+(a) atisāraḥ,1,1,1
+(a) añjananāmikā,1,1,1
+(a) aśmarī,1,1,1
+(a) bahirāyāmaḥ (a) bāhyāyāmaḥ (a) dhanuḥstambhaḥ,1,1,1
+(a) bhraṃśathuḥ,1,1,1
+(a) chardiḥ,1,1,1
+(a) dantaghātaḥ,1,1,1
+(a) dantaveṣṭakaḥ,1,1,1
+(a) galaughaḥ,1,1,1
+(a) gaṇḍamālā,1,1,1
+(a) gudabhraṃśaḥ,1,1,1
+(a) indraluptaḥ,1,1,1
+(a) jaṅgamaviṣaḥ,1,1,1
+(a) jvara,1,1,1
+"(a) kacchapaḥ, (a) kacchapī",1,1,1
+(a) kakṣāḥ,1,1,1
+(a) kaphakṣayaḥ,1,1,1
+(a) karṇa-gūthakaḥ,1,1,1
+(a) karṇa-vidradhiḥ,1,1,1
+(a) kumāraśoṣaḥ,1,1,1
+(a) kṣudrā hikkā,1,1,1
+(a) kṣudvegarodhaḥ,1,1,1
+(a) lohitakṣayā,1,1,1
+(a) lohitamehaḥ,1,1,1
+(a) mukhaśoṣaḥ,1,1,1
+(a) mūtravṛddhiḥ,1,1,1
+(a) mūtrotsaṅgaḥ,1,1,1
+(a) netraja-arśaḥ,1,1,1
+(a) nidrānāśaḥ (a) asvapnaḥ,1,1,1
+(a) nāḍīkalpana-vyāpat,1,1,1
+(a) ojaḥkṣayaḥ,1,1,1
+(a) prastāri-arma,1,1,1
+(a) pratitūnī,1,1,1
+(a) pratiśyāyaḥ (a) pīnasaḥ,1,1,1
+"(a) r̥ṣikāyaḥ (a) ṛṣisattvaṃ, (a) ārṣasattvaṃ",1,1,1
+(a) savraṇaśukraḥ,1,1,1
+(a) sirotpātaḥ,1,1,1
+(a) sirāpraharṣaḥ (a) Sirāharṣaḥ,1,1,1
+(a) sāmamalaḥ,1,1,1
+(a) sānnipātika-kācaḥ,1,1,1
+(a) tṛṣṇāvegarodhaḥ,1,1,1
+"(a) udumbara-kuṣṭhaḥ, (a) paittika-kuṣṭhaḥ",1,1,1
+(a) yakr̥jjavidradhiḥ,1,1,1
+(a) yonikandaḥ,1,1,1
+(a) ādhmānam,1,1,1
+(a) śarkarārbudaḥ,1,1,1
+(a) śuklārma,1,1,1
+(a) śūkarogaḥ,1,1,1
+(a) śūlaḥ,1,1,1
+mūtrakṣayaḥ,1,1,1

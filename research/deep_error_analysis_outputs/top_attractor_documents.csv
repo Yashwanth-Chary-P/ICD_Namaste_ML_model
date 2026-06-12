@@ -1,0 +1,31 @@
+code,title,num_index_terms,doc_length_words,false_positive_count
+SN4F,Birth mark - blackish red disorder (TM2),2,18,211.0
+SN4W,Ulcer disorder (TM2),2,12,35.0
+SQ02,Hysteria disorder (TM2),2,11,12.0
+SP9Y,Other specified disorders affecting the whole body (TM2),127,553,11.0
+SS55,Kapha-Vata constitution pattern (TM2),2,10,10.0
+SM51,Anal fissure disorder (TM2),3,16,9.0
+SQ21,Egomania disorder (TM2),2,11,8.0
+SR66,Rīḥ pattern (TM2),3,16,8.0
+SM71,Anorexia disorder (TM2),3,15,8.0
+SS52,Kapha constitution pattern (TM2),2,10,8.0
+SR40,"Vitiation of ""primary structural components of the body"" pattern (TM2)",2,21,7.0
+SS82,Vata predominant age pattern (TM2),3,16,7.0
+SN49,Integumentary disorder (TM2),13,71,6.0
+SK53,Stammering disorder (TM2),2,16,6.0
+SR00,Marasmus disorder (TM2),2,11,6.0
+SQ22,Non alcoholic intoxication disorder (TM2),2,14,6.0
+SR84,Hyperhidrosis pattern (TM2),2,8,4.0
+SR11,Accumulation of Vata pattern (TM2),2,12,4.0
+SM53,Haemorrhoids disorder (TM2),59,330,4.0
+SK6T,Phlyctenular nodule disorder (TM2),4,19,4.0
+SQ50,Worm infestation disorder (TM2),15,66,4.0
+SS50,Vata constitution pattern (TM2),2,10,4.0
+SR4E,Depletion of reproductive tissues and semen pattern (TM2),3,21,4.0
+SN4G,Melasma disorder (TM2),3,13,3.0
+SK55,Weakness of thighs due to vata disorder (TM2),4,26,3.0
+SP95,Excessive yawning disorder (TM2),2,15,3.0
+SP14,Gout disorder (TM2),2,13,3.0
+SN42,Dryness of skin disorder (TM2),2,20,3.0
+SR18,Spreading of pitta pattern (TM2),2,12,3.0
+SR1V,Spoilage of humors pattern (TM2),3,15,3.0

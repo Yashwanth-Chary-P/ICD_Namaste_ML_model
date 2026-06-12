@@ -1,0 +1,8 @@
+metric,value,model
+total_queries,237,BM25+RERANK
+top1_correct,124,BM25+RERANK
+top1_error,113,BM25+RERANK
+top5_hit,220,BM25+RERANK
+top5_miss,17,BM25+RERANK
+rerank_fixed,0,BM25+RERANK
+rerank_hurt,0,BM25+RERANK
